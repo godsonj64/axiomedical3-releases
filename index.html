@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AXIO Medical — AI-integrated medical imaging workstation</title>
+<meta name="description" content="Free, MIT-licensed research software: a desktop DICOM workstation with AI segmentation of 117 structures, radiomics, opportunistic CT biomarkers and lung cancer risk prediction. Runs fully offline on macOS and Windows.">
+<meta name="theme-color" content="#0b0c0f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AXIO Medical — AI-integrated medical imaging workstation">
+<meta property="og:description" content="Segmentation, radiomics, opportunistic biomarkers and lung cancer risk — computed on your own workstation, verified against independent references.">
+<meta property="og:image" content="https://godsonj64.github.io/axiomedical3-releases/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent-strong focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ───────────────────────── header ───────────────────────── -->
+<header class="sticky top-0 z-50 border-b border-line bg-ground/85 backdrop-blur-md">
+  <div class="wrap flex h-16 items-center gap-8">
+    <a href="#top" class="shrink-0" aria-label="AXIO Medical home"><img src="img/logo.png" alt="AXIO Medical" class="h-7 w-auto" width="66" height="28"></a>
+    <nav id="navLinks" aria-label="Primary"
+         class="absolute left-0 right-0 top-16 hidden flex-col border-b border-line bg-panel px-6 py-2
+                md:static md:flex md:flex-row md:items-center md:gap-7 md:border-0 md:bg-transparent md:p-0">
+      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#accuracy">Accuracy</a>
+      <a class="nav-link" href="#imaging">Imaging</a>
+      <a class="nav-link" href="#specs">Specifications</a>
+    </nav>
+    <div class="ml-auto flex items-center gap-3">
+      <a href="#download" class="btn-primary hidden sm:inline-flex">Download 2.4.1</a>
+      <button id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"
+              class="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-2 hover:bg-panel-2 md:hidden">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ───────────────────────── hero ───────────────────────── -->
+<section id="top" class="border-b border-line">
+  <div class="wrap pb-16 pt-16 md:pb-20 md:pt-24">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
+          An AI-integrated medical imaging workstation.
+          <span class="text-accent-tint">Free.</span>
+        </h1>
+      </div>
+      <div class="lg:col-span-5">
+        <p class="text-[17px] leading-[1.7] text-ink-2">
+          View, measure and quantify medical images. Segmentation, radiomics, opportunistic CT
+          biomarkers and lung cancer risk run <span class="text-ink-1">locally on your own workstation</span> —
+          images never leave the machine, and nothing needs a network after first-run setup.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#download" class="btn-primary">Download free</a>
+          <a href="#accuracy" class="btn-secondary">How it is verified</a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="mt-14">
+      <div class="figure-frame">
+        <img src="img/hero.webp" width="1600" height="969" fetchpriority="high"
+             alt="AXIO Medical showing an axial chest CT with AI segmentation overlaid: lung lobes, heart, aorta, vertebra and ribs each in their own colour.">
+      </div>
+      <figcaption class="caption">A contrast-enhanced chest CT from the public TCIA LungCT-Diagnosis collection, segmented on-device into 85 anatomical structures in 84 seconds on an Apple M4.</figcaption>
+    </figure>
+
+    <dl class="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-10 md:grid-cols-4">
+      <div><dt class="sr-only">Structures</dt><dd class="stat-num">117</dd><dd class="stat-label">CT structures the segmentation model can label</dd></div>
+      <div><dt class="sr-only">Features</dt><dd class="stat-num">107</dd><dd class="stat-label">radiomic features per structure</dd></div>
+      <div><dt class="sr-only">Biomarkers</dt><dd class="stat-num">15+</dd><dd class="stat-label">opportunistic biomarkers with literature references</dd></div>
+      <div><dt class="sr-only">Offline</dt><dd class="stat-num">0</dd><dd class="stat-label">bytes of patient data sent anywhere</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ───────────────────────── safety ───────────────────────── -->
+<aside class="border-b border-line bg-panel" aria-label="Intended use">
+  <div class="wrap flex flex-col gap-2 py-5 md:flex-row md:items-baseline md:gap-6">
+    <p class="shrink-0 text-[13px] font-semibold text-warn">Research and educational use only</p>
+    <p class="text-[13px] leading-relaxed text-ink-3">AXIO Medical is not a regulated medical device. It has not been cleared by the FDA, CE-marked, or approved by any authority for clinical use. Every output is a decision-support estimate for review by a qualified reader — never a diagnosis.</p>
+  </div>
+</aside>
+
+<!-- ───────────────────────── workflow ───────────────────────── -->
+<section id="features" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Workflow</p>
+    <h2 class="h-section mt-3 max-w-[20ch]">From DICOM files to a quantitative report</h2>
+    <p class="lede mt-4">One desktop application covers the whole path. Each stage feeds the next on the same voxel grid, so every number traces back to the source pixels.</p>
+
+    <ol class="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <li class="bg-panel p-6">
+        <span class="font-mono text-[12px] text-accent-tint">01</span>
+        <h3 class="mt-3 font-display text-[18px] font-semibold">Load</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">DICOM, NIfTI and common image formats, or query a PACS read-only over DICOMweb. CT, MR, X-ray, ultrasound, PET, nuclear medicine and mammography.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="font-mono text-[12px] text-accent-tint">02</span>
+        <h3 class="mt-3 font-display text-[18px] font-semibold">Verify</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Fail-closed integrity checks on matrix, spacing, orientation, frame of reference and rescale before anything is reconstructed. A failing series is blocked, not silently rendered.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="font-mono text-[12px] text-accent-tint">03</span>
+        <h3 class="mt-3 font-display text-[18px] font-semibold">Reconstruct</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Linked axial, coronal and sagittal planes with MIP, MinIP and mean slabs, plus WebGPU volume, cinematic and path-traced rendering.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="font-mono text-[12px] text-accent-tint">04</span>
+        <h3 class="mt-3 font-display text-[18px] font-semibold">Segment</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">TotalSegmentator labels up to 117 structures. Review the masks slice by slice, correct them with a brush, and export them as NIfTI.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="font-mono text-[12px] text-accent-tint">05</span>
+        <h3 class="mt-3 font-display text-[18px] font-semibold">Quantify</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">PyRadiomics features for every structure, and opportunistic biomarkers — steatosis, emphysema, bone density, aortic diameter, organ volumes — each with its reference range and citation.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="font-mono text-[12px] text-accent-tint">06</span>
+        <h3 class="mt-3 font-display text-[18px] font-semibold">Assess risk</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Sybil estimates 1–6 year lung cancer risk from a single low-dose chest CT, with an attention map of the regions that drove the score.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ───────────────────────── AI engines ───────────────────────── -->
+<section class="border-b border-line bg-panel/40">
+  <div class="wrap py-20 md:py-28">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <p class="eyebrow">AI engines</p>
+        <h2 class="h-section mt-3">Four engines, installed for you</h2>
+        <p class="lede mt-4">On first launch AXIO provisions its own Python runtime and isolated environments. It detects NVIDIA CUDA, Apple Metal or CPU and installs the matching build — no Python, compiler or conda required.</p>
+
+        <dl class="mt-10 divide-y divide-line border-y border-line">
+          <div class="py-5">
+            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Auto-segmentation</span><span class="font-mono text-[12px] text-ink-4">TotalSegmentator 2.17 · nnU-Net 2.8</span></dt>
+            <dd class="mt-2 text-[14px] leading-relaxed text-ink-2">Up to 117 structures at 1.5 mm, grouped by system, with per-structure volumes.</dd>
+          </div>
+          <div class="py-5">
+            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Radiomics</span><span class="font-mono text-[12px] text-ink-4">PyRadiomics 3.0.1</span></dt>
+            <dd class="mt-2 text-[14px] leading-relaxed text-ink-2">107 IBSI-aligned features per structure across seven classes, computed on the exact segmentation grid.</dd>
+          </div>
+          <div class="py-5">
+            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Opportunistic biomarkers</span><span class="font-mono text-[12px] text-ink-4">15+ measures</span></dt>
+            <dd class="mt-2 text-[14px] leading-relaxed text-ink-2">Measurements a routine CT already contains, graded against published thresholds — and left ungraded where a threshold does not apply, such as fatty-liver criteria on contrast CT.</dd>
+          </div>
+          <div class="py-5">
+            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Lung cancer risk</span><span class="font-mono text-[12px] text-ink-4">Sybil 1.7.2 · NLST</span></dt>
+            <dd class="mt-2 text-[14px] leading-relaxed text-ink-2">A 1–6 year cumulative risk trajectory with an attention map. Valid only for low-dose screening CT in the population it was trained on.</dd>
+          </div>
+        </dl>
+      </div>
+
+      <figure class="lg:col-span-7 lg:pt-12">
+        <div class="figure-frame">
+          <img src="img/segmentation.webp" width="1600" height="969" loading="lazy"
+               alt="The Auto-Segmentation panel after a run, listing lung lobes and cardiovascular structures with their volumes beside the coloured overlay.">
+        </div>
+        <figcaption class="caption">The segmentation panel lists every structure with its volume. Toggle any of them, switch between fill and contour, or correct a mask by hand before measuring.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── accuracy ───────────────────────── -->
+<section id="accuracy" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Accuracy</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Verified against independent references</h2>
+    <p class="lede mt-4">Quantitative software is only as good as its checks. Each layer of AXIO has been run on a real, public CT series and compared with an implementation that shares none of its code.</p>
+
+    <div class="mt-14 grid gap-12 lg:grid-cols-12">
+      <ol class="lg:col-span-7">
+        <li class="check">
+          <span class="mt-1 font-mono text-[12px] text-ok">PASS</span>
+          <div><h3 class="font-display text-[17px] font-semibold">Pixel decoding</h3>
+          <p class="mt-1 text-[14px] leading-relaxed text-ink-2">All 17,563,648 voxels decode to the same Hounsfield values as pydicom — a maximum difference of 0 HU.</p></div>
+        </li>
+        <li class="check">
+          <span class="mt-1 font-mono text-[12px] text-ok">PASS</span>
+          <div><h3 class="font-display text-[17px] font-semibold">Reconstruction</h3>
+          <p class="mt-1 text-[14px] leading-relaxed text-ink-2">Slice ordering matches 67 of 67, and every MPR plane and MIP, MinIP and mean slab matches numpy reslicing exactly.</p></div>
+        </li>
+        <li class="check">
+          <span class="mt-1 font-mono text-[12px] text-ok">PASS</span>
+          <div><h3 class="font-display text-[17px] font-semibold">Segmentation</h3>
+          <p class="mt-1 text-[14px] leading-relaxed text-ink-2">The mask produced through the app is voxel-identical to a reference pipeline built directly from the DICOM geometry, and every left- and right-sided organ lands on the correct side.</p></div>
+        </li>
+        <li class="check">
+          <span class="mt-1 font-mono text-[12px] text-ok">PASS</span>
+          <div><h3 class="font-display text-[17px] font-semibold">Biomarkers and radiomics</h3>
+          <p class="mt-1 text-[14px] leading-relaxed text-ink-2">9 of 9 biomarkers and 10 of 10 first-order radiomic features reproduce exactly when recomputed in plain numpy from the same mask.</p></div>
+        </li>
+      </ol>
+
+      <div class="lg:col-span-5">
+        <div class="card">
+          <p class="eyebrow">Test case</p>
+          <dl class="mt-4 space-y-3 text-[14px]">
+            <div class="flex justify-between gap-4"><dt class="text-ink-3">Dataset</dt><dd class="text-right font-mono text-[13px]">TCIA LungCT-Diagnosis R_013</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-ink-3">Scanner</dt><dd class="text-right font-mono text-[13px]">Siemens Sensation 16</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-ink-3">Acquisition</dt><dd class="text-right font-mono text-[13px]">120 kVp · 149 mAs · B40f</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-ink-3">Volume</dt><dd class="text-right font-mono text-[13px]">512 × 512 × 67 · 5 mm</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-ink-3">Hardware</dt><dd class="text-right font-mono text-[13px]">Apple M4 · Metal</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-ink-3">Integrity</dt><dd class="text-right font-mono text-[13px] text-ok">10 / 10 checks pass</dd></div>
+          </dl>
+        </div>
+        <p class="fine mt-5">These checks found a defect in 2.4.0: the volume handed to the segmentation model was rotated 180°, placing organs on the wrong side of the body. Version 2.4.1 corrects it, and the checks now guard it in the test suite.</p>
+      </div>
+    </div>
+
+    <div class="mt-20 grid gap-12 lg:grid-cols-2">
+      <div>
+        <h3 class="font-display text-[20px] font-semibold">Lung volumetry</h3>
+        <p class="mt-1 text-[14px] text-ink-3">Aerated lung within each segmented lobe.</p>
+        <table class="tbl mt-5">
+          <thead><tr><th scope="col">Structure</th><th scope="col" class="text-right">Volume</th></tr></thead>
+          <tbody>
+            <tr><td>Right lower lobe</td><td>1,621 ml</td></tr>
+            <tr><td>Right upper lobe</td><td>1,014 ml</td></tr>
+            <tr><td>Right middle lobe</td><td>810 ml</td></tr>
+            <tr><td>Left lower lobe</td><td>755 ml</td></tr>
+            <tr><td>Left upper lobe</td><td>745 ml</td></tr>
+            <tr class="total"><td>Total aerated lung</td><td>4,945 ml</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-4">The lobes sum exactly to the independently reported total, and the right lung (3,444 ml, three lobes) is larger than the left (1,501 ml, two lobes), as anatomy requires. Measured on 5 mm slices, so boundary voxels carry some partial-volume uncertainty.</p>
+      </div>
+      <div>
+        <h3 class="font-display text-[20px] font-semibold">First-order radiomics</h3>
+        <p class="mt-1 text-[14px] text-ink-3">Left lower lobe — a sample of 107 features.</p>
+        <table class="tbl mt-5">
+          <thead><tr><th scope="col">Feature</th><th scope="col" class="text-right">Value</th></tr></thead>
+          <tbody>
+            <tr><td>Mean</td><td>−796.12 HU</td></tr>
+            <tr><td>Median</td><td>−847 HU</td></tr>
+            <tr><td>10th / 90th percentile</td><td>−898 / −630 HU</td></tr>
+            <tr><td>Minimum / maximum</td><td>−1024 / 447 HU</td></tr>
+            <tr><td>Entropy</td><td>3.7349</td></tr>
+            <tr><td>Skewness</td><td>2.9203</td></tr>
+          </tbody>
+        </table>
+        <p class="fine mt-4">Physiologically consistent for aerated lung: a mean near −800 HU, a floor at −1024 HU (air) and a tail toward vessel attenuation.</p>
+      </div>
+    </div>
+
+    <div class="mt-20">
+      <h3 class="font-display text-[20px] font-semibold">Opportunistic biomarkers</h3>
+      <p class="mt-1 text-[14px] text-ink-3">Fifteen measures from the same scan. Each is graded only where its reference applies.</p>
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <div class="metric border-l-ok">
+          <div class="flex items-baseline justify-between gap-4"><h4 class="text-[15px] font-semibold">Emphysema index (LAA%<sub>−950</sub>)</h4><span class="font-mono text-[18px] text-ok">1.0 %</span></div>
+          <p class="mt-1 text-[13.5px] text-ink-2">No significant low-attenuation area.</p>
+          <p class="mt-2 font-mono text-[11px] text-ink-4">ref &lt; 6 % · Lynch 2015 (Fleischner), COPDGene</p>
+        </div>
+        <div class="metric border-l-warn">
+          <div class="flex items-baseline justify-between gap-4"><h4 class="text-[15px] font-semibold">Trabecular attenuation — L1</h4><span class="font-mono text-[18px] text-warn">150 HU</span></div>
+          <p class="mt-1 text-[13.5px] text-ink-2">Reduced trabecular attenuation — possible osteopenia.</p>
+          <p class="mt-2 font-mono text-[11px] text-ink-4">ref ≥ 110 osteopenia / ≥ 160 normal · Pickhardt 2013</p>
+        </div>
+        <div class="metric border-l-ok">
+          <div class="flex items-baseline justify-between gap-4"><h4 class="text-[15px] font-semibold">Spleen volume</h4><span class="font-mono text-[18px] text-ok">265 ml</span></div>
+          <p class="mt-1 text-[13.5px] text-ink-2">Within the typical adult range.</p>
+          <p class="mt-2 font-mono text-[11px] text-ink-4">population volumetry</p>
+        </div>
+        <div class="metric border-l-accent">
+          <div class="flex items-baseline justify-between gap-4"><h4 class="text-[15px] font-semibold">Liver − spleen attenuation</h4><span class="font-mono text-[18px] text-accent-tint">−13 HU</span></div>
+          <p class="mt-1 text-[13.5px] text-ink-2">Reported, not graded: the study is contrast-enhanced (aortic lumen 192 HU), and this criterion is defined on non-contrast CT.</p>
+          <p class="mt-2 font-mono text-[11px] text-ink-4">ref &gt; −10 HU (non-contrast) · Boyce 2010, Kodama 2007</p>
+        </div>
+      </div>
+
+      <figure class="mt-10">
+        <div class="figure-frame">
+          <img src="img/biomarkers.webp" width="1600" height="969" loading="lazy"
+               alt="The Clinical Biomarkers panel listing hepatobiliary, pulmonary and musculoskeletal measures with values, flags and literature references.">
+        </div>
+        <figcaption class="caption">Every biomarker carries its value, its reference range and its source, and is flagged normal, borderline, abnormal or informational.</figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-20">
+      <h3 class="font-display text-[20px] font-semibold">How long a full pass takes</h3>
+      <dl class="mt-6 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Segmentation</dt><dd class="stat-num mt-1 text-[24px]">84 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">85 structures · Apple GPU</dd></div>
+        <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Radiomics</dt><dd class="stat-num mt-1 text-[24px]">120 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">85 structures · CPU</dd></div>
+        <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Biomarkers</dt><dd class="stat-num mt-1 text-[24px]">3 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">15 measures</dd></div>
+        <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Lung risk</dt><dd class="stat-num mt-1 text-[24px]">358 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">Sybil ensemble · CPU</dd></div>
+      </dl>
+      <p class="fine mt-4">About nine and a half minutes end to end on a laptop, with no server and no network. Most of it is the lung-risk ensemble on CPU; choosing a single Sybil model instead finishes that step in about a minute.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── imaging ───────────────────────── -->
+<section id="imaging" class="border-b border-line bg-panel/40">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Imaging</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Rendering tied to the stored values</h2>
+    <p class="lede mt-4">A WebGPU renderer with a WebGL2 fallback, driven by transfer functions calibrated in Hounsfield units — so what you see follows the data, not an arbitrary colour ramp.</p>
+
+    <div class="mt-10 flex flex-wrap gap-2" role="tablist" aria-label="Rendering modes">
+      <button type="button" role="tab" id="t-mpr"   aria-controls="p-mpr"   aria-selected="true"  class="tab">Orthogonal MPR</button>
+      <button type="button" role="tab" id="t-seg3d" aria-controls="p-seg3d" aria-selected="false" class="tab" tabindex="-1">3D anatomy</button>
+      <button type="button" role="tab" id="t-cine"  aria-controls="p-cine"  aria-selected="false" class="tab" tabindex="-1">Cinematic</button>
+      <button type="button" role="tab" id="t-pt"    aria-controls="p-pt"    aria-selected="false" class="tab" tabindex="-1">Path traced</button>
+    </div>
+
+    <div class="mt-6">
+      <figure role="tabpanel" id="p-mpr" aria-labelledby="t-mpr">
+        <div class="figure-frame"><img src="img/mpr.webp" width="1600" height="969" loading="lazy" alt="Linked axial, coronal and sagittal views of the chest CT with MIP slabs, each pane marked with patient orientation letters."></div>
+        <figcaption class="caption">Linked diagnostic planes with MIP slabs. Every pane is marked with its patient orientation — S/I, R/L, A/P — and the voxel readout reports the true Hounsfield value under the cursor.</figcaption>
+      </figure>
+      <figure role="tabpanel" id="p-seg3d" aria-labelledby="t-seg3d" hidden>
+        <div class="figure-frame"><img src="img/anatomy3d.webp" width="1600" height="969" loading="lazy" alt="Three-dimensional surface reconstruction of the segmented organs of the chest and upper abdomen."></div>
+        <figcaption class="caption">Segmented structures turned into smooth surfaces and shown in 3D, colour-matched to the 2D overlay.</figcaption>
+      </figure>
+      <figure role="tabpanel" id="p-cine" aria-labelledby="t-cine" hidden>
+        <div class="figure-frame"><img src="img/cinematic.webp" width="1600" height="969" loading="lazy" alt="Cinematic volume rendering of the chest CT with volumetric shadows and ambient occlusion."></div>
+        <figcaption class="caption">Cinematic rendering with volumetric shadows, ambient occlusion and subsurface scattering derived from attenuation.</figcaption>
+      </figure>
+      <figure role="tabpanel" id="p-pt" aria-labelledby="t-pt" hidden>
+        <div class="figure-frame"><img src="img/pathtraced.webp" width="1600" height="969" loading="lazy" alt="Path-traced volume rendering of the chest CT."></div>
+        <figcaption class="caption">Unbiased volumetric path tracing: Woodcock-tracked free flights, multiple scattering, and progressive refinement while the view is still.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── lung risk ───────────────────────── -->
+<section class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-5">
+        <p class="eyebrow">Lung cancer risk</p>
+        <h2 class="h-section mt-3">A risk model, used within its limits</h2>
+        <p class="lede mt-4">Sybil, developed at MIT and trained on the National Lung Screening Trial, estimates cumulative lung cancer risk from one to six years out, and shows where in the scan it looked.</p>
+        <div class="mt-8 rounded-lg border border-bad/30 bg-bad/[0.06] p-5">
+          <p class="text-[14px] font-semibold text-bad">Shown as software output only</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Sybil is validated on low-dose screening CT in adults aged 55–74 with a significant smoking history. The example here is a contrast-enhanced diagnostic scan — outside that population — so its numbers demonstrate that the engine runs and are not a valid risk assessment. An attention map is not a detection.</p>
+        </div>
+      </div>
+      <figure class="lg:col-span-7">
+        <div class="figure-frame"><img src="img/lungrisk.webp" width="1600" height="969" loading="lazy" alt="The Lung Cancer Risk panel with a six-year cumulative risk chart and an attention map over a chest CT slice."></div>
+        <figcaption class="caption">The Lung Cancer Risk panel: a cumulative trajectory, a risk band per horizon, and the attention map.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── specs ───────────────────────── -->
+<section id="specs" class="border-b border-line bg-panel/40">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Specifications</p>
+    <h2 class="h-section mt-3">What is inside, and what it needs</h2>
+    <div class="mt-12 grid gap-12 lg:grid-cols-2">
+      <div>
+        <h3 class="font-display text-[18px] font-semibold">Bundled engines</h3>
+        <table class="tbl mt-4"><tbody>
+          <tr><td>TotalSegmentator</td><td>2.17.0 · Apache-2.0</td></tr>
+          <tr><td>nnU-Net</td><td>2.8.1 · Apache-2.0</td></tr>
+          <tr><td>PyRadiomics</td><td>3.0.1 · BSD-3</td></tr>
+          <tr><td>Sybil</td><td>1.7.2 · MIT</td></tr>
+          <tr><td>PyTorch</td><td>2.13.0</td></tr>
+          <tr><td>Three.js</td><td>0.160.1 · MIT</td></tr>
+        </tbody></table>
+      </div>
+      <div>
+        <h3 class="font-display text-[18px] font-semibold">Requirements</h3>
+        <table class="tbl mt-4"><tbody>
+          <tr><td>macOS</td><td>11 or later · Apple Silicon &amp; Intel</td></tr>
+          <tr><td>Windows</td><td>10 / 11 · x64</td></tr>
+          <tr><td>Memory</td><td>16 GB recommended</td></tr>
+          <tr><td>Acceleration</td><td>Apple Metal, NVIDIA CUDA or CPU</td></tr>
+          <tr><td>Disk</td><td>~6 GB for the AI runtime, once</td></tr>
+          <tr><td>Network</td><td>First-run setup only</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── download ───────────────────────── -->
+<section id="download">
+  <div class="wrap py-20 md:py-28">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <p class="eyebrow">Download</p>
+        <h2 class="h-section mt-3">AXIO Medical 2.4.1</h2>
+        <p class="lede mt-4">Free and MIT-licensed. No account, no licence key, no telemetry.</p>
+        <div class="mt-8 rounded-lg border border-accent/30 bg-accent/[0.06] p-5">
+          <p class="text-[14px] font-semibold text-ink-1">Upgrading from 2.4.0?</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">2.4.1 corrects the orientation of AI segmentation. If you ran AutoSeg, Radiomics or Biomarkers in 2.4.0, re-run them after updating.</p>
+        </div>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:col-span-7">
+        <div class="card flex flex-col">
+          <h3 class="font-display text-[18px] font-semibold">macOS</h3>
+          <p class="mt-1 text-[13px] text-ink-3">macOS 11+ · Universal (Apple Silicon &amp; Intel)</p>
+          <div class="mt-6 flex flex-col gap-3">
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.4.1/AXIO.Medical-2.4.1-universal.dmg">Disk image <span class="font-normal opacity-80">· 189 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.4.1/AXIO.Medical-2.4.1-universal-mac.zip">Zipped app <span class="font-normal text-ink-3">· 208 MB</span></a>
+          </div>
+        </div>
+        <div class="card flex flex-col">
+          <h3 class="font-display text-[18px] font-semibold">Windows</h3>
+          <p class="mt-1 text-[13px] text-ink-3">Windows 10 / 11 · x64</p>
+          <div class="mt-6 flex flex-col gap-3">
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.4.1/AXIO.Medical.Setup.2.4.1.exe">Installer <span class="font-normal opacity-80">· 97 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.4.1/AXIO.Medical.2.4.1.exe">Portable <span class="font-normal text-ink-3">· 96 MB</span></a>
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <p class="fine">These builds are not signed with a paid code-signing certificate. On macOS, right-click the app and choose <span class="text-ink-2">Open</span>; on Windows, choose <span class="text-ink-2">More info → Run anyway</span> if SmartScreen appears. Verify downloads against the SHA-256 checksums in the <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.4.1">release notes</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-line bg-panel">
+  <div class="wrap grid gap-10 py-12 md:grid-cols-12">
+    <div class="md:col-span-5">
+      <img src="img/logo.png" alt="AXIO Medical" class="h-7 w-auto" width="66" height="28">
+      <p class="fine mt-4">Developed by <span class="text-ink-2">Godson Johnson</span> · Axiomatic Research · <span data-year>2026</span>.<br>AXIO Medical is MIT licensed and free to use.</p>
+    </div>
+    <div class="md:col-span-7">
+      <p class="fine">Bundled open-source engines: TotalSegmentator (Apache-2.0) · nnU-Net (Apache-2.0) · PyRadiomics (BSD-3) · Sybil (MIT — Mikhael et al., <em>J Clin Oncol</em> 2023) · Three.js (MIT). Imaging shown is from the public, de-identified TCIA <em>LungCT-Diagnosis</em> collection.</p>
+      <p class="mt-4 text-[12px] leading-relaxed text-ink-4">Not cleared by the FDA, CE-marked, or approved by any regulatory authority for clinical use. All quantitative outputs are exploratory and must be interpreted by qualified researchers. Not for primary diagnosis or clinical decision-making.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="lightbox" hidden class="fixed inset-0 z-[200] flex cursor-zoom-out items-center justify-center bg-ground/95 p-6 md:p-10" role="dialog" aria-modal="true" aria-label="Enlarged screenshot">
+  <button id="lbClose" type="button" aria-label="Close" class="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-2 hover:bg-panel-2 hover:text-ink-1">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+  </button>
+  <img id="lbImg" alt="" class="max-h-full max-w-full rounded-lg border border-line-strong">
+</div>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>

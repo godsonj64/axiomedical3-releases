@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Anything toggled with the hidden attribute must stay hidden even when a
+     component sets its own display value (the v1 lightbox did not). */
+  [hidden] { display: none !important; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body { @apply bg-ground text-ink-1 font-sans antialiased; font-feature-settings: "cv11", "ss01"; }
+  ::selection { background: rgba(74, 144, 226, 0.3); }
+
+  :focus-visible { outline: 2px solid #4a90e2; outline-offset: 2px; border-radius: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; }
+  }
+}
+
+@layer components {
+  .wrap { @apply mx-auto max-w-page px-6 md:px-8; }
+
+  /* type */
+  .eyebrow { @apply font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-ink-3; }
+  .h-section { @apply font-display text-[clamp(1.75rem,3.2vw,2.5rem)] font-bold leading-[1.12] tracking-tightest text-ink-1; }
+  .lede { @apply max-w-[68ch] text-[17px] leading-[1.7] text-ink-2; }
+  .fine { @apply max-w-[88ch] text-[13px] leading-relaxed text-ink-3; }
+
+  /* buttons — 44 px targets */
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md px-5 text-[15px] font-semibold transition-colors; }
+  .btn-primary { @apply btn bg-accent-strong text-white hover:bg-accent-hover; }
+  .btn-secondary { @apply btn border border-line-strong bg-panel-2 text-ink-1 hover:bg-panel-3; }
+
+  /* nav */
+  .nav-link { @apply inline-flex min-h-[44px] items-center text-[14px] font-medium text-ink-2 transition-colors hover:text-ink-1; }
+  .nav-link.active { @apply text-ink-1; }
+
+  /* surfaces */
+  .card { @apply rounded-lg border border-line bg-panel p-6; }
+  .figure-frame { @apply overflow-hidden rounded-xl border border-line-strong bg-panel shadow-[0_24px_60px_-20px_rgba(0,0,0,0.8)]; }
+  .figure-frame img { @apply block w-full cursor-zoom-in; }
+  .caption { @apply mt-3 max-w-[90ch] text-[13px] leading-relaxed text-ink-3; }
+
+  /* data */
+  .stat-num { @apply font-mono text-[28px] font-medium tracking-tight text-ink-1; }
+  .stat-label { @apply mt-1 text-[13px] leading-snug text-ink-3; }
+  .tbl { @apply w-full border-collapse text-[14px]; }
+  .tbl th { @apply border-b border-line pb-2 text-left text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-4; }
+  .tbl td { @apply border-b border-line py-2.5 text-ink-2; }
+  .tbl td:last-child { @apply text-right font-mono text-[13px] text-ink-1; }
+  .tbl tr:last-child td { @apply border-b-0; }
+  .tbl .total td { @apply border-t border-line-strong font-semibold text-ink-1; }
+
+  .metric { @apply rounded-lg border border-line border-l-[3px] bg-panel px-5 py-4; }
+  .check { @apply flex gap-4 border-t border-line py-5; }
+  .check:first-child { @apply border-t-0 pt-0; }
+
+  .tab { @apply inline-flex min-h-[40px] items-center rounded-md border border-line bg-panel px-4 text-[14px] text-ink-2 transition-colors hover:text-ink-1; }
+  .tab[aria-selected="true"] { @apply border-accent/50 bg-accent/10 text-ink-1; }
+}
