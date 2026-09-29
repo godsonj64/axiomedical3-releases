@@ -33,6 +33,7 @@
       <a class="nav-link" href="#features">Features</a>
       <a class="nav-link" href="#accuracy">Accuracy</a>
       <a class="nav-link" href="#imaging">Imaging</a>
+      <a class="nav-link" href="#surfaces">3D surfaces</a>
       <a class="nav-link" href="#specs">Specifications</a>
     </nav>
     <div class="ml-auto flex items-center gap-3">
@@ -196,10 +197,10 @@
 
       <figure class="lg:col-span-7 lg:pt-12">
         <div class="figure-frame">
-          <img src="img/segmentation.webp" width="1600" height="969" loading="lazy"
-               alt="The Auto-Segmentation panel after a run, listing lung lobes and cardiovascular structures with their volumes beside the coloured overlay.">
+          <img src="img/seg-contours.webp" width="1600" height="825" loading="lazy"
+               alt="Axial chest CT at slice 41 of 67 with AI contours around the lung lobes, heart, aorta, vertebra and ribs, beside the Auto-Segmentation panel listing structure volumes.">
         </div>
-        <figcaption class="caption">The segmentation panel lists every structure with its volume. Toggle any of them, switch between fill and contour, or correct a mask by hand before measuring.</figcaption>
+        <figcaption class="caption">AutoSeg on R_013: 85 structures in 56.1 s on Apple Metal, at full resolution. Contour mode on slice 41 of 67. The panel lists every structure with its volume — heart 511 ml, aorta 205 ml, left lower and upper lobes 755 and 745 ml — and any mask can be corrected with a brush before measuring.</figcaption>
       </figure>
     </div>
   </div>
@@ -344,6 +345,7 @@
 
     <div class="mt-10 flex flex-wrap gap-2" role="tablist" aria-label="Rendering modes">
       <button type="button" role="tab" id="t-mpr"   aria-controls="p-mpr"   aria-selected="true"  class="tab">Orthogonal MPR</button>
+      <button type="button" role="tab" id="t-views" aria-controls="p-views" aria-selected="false" class="tab" tabindex="-1">Multi-viewport</button>
       <button type="button" role="tab" id="t-seg3d" aria-controls="p-seg3d" aria-selected="false" class="tab" tabindex="-1">3D anatomy</button>
       <button type="button" role="tab" id="t-cine"  aria-controls="p-cine"  aria-selected="false" class="tab" tabindex="-1">Cinematic</button>
       <button type="button" role="tab" id="t-pt"    aria-controls="p-pt"    aria-selected="false" class="tab" tabindex="-1">Path traced</button>
@@ -354,18 +356,107 @@
         <div class="figure-frame"><img src="img/mpr.webp" width="1600" height="969" loading="lazy" alt="Linked axial, coronal and sagittal views of the chest CT with MIP slabs, each pane marked with patient orientation letters."></div>
         <figcaption class="caption">Linked diagnostic planes with MIP slabs. Every pane is marked with its patient orientation — S/I, R/L, A/P — and the voxel readout reports the true Hounsfield value under the cursor.</figcaption>
       </figure>
+      <figure role="tabpanel" id="p-views" aria-labelledby="t-views" hidden>
+        <div class="figure-frame"><img src="img/viewports.webp" width="1600" height="823" loading="lazy" alt="Four viewports of the same chest CT: AI contours on a soft-tissue window, a colour map of the shoulder girdle, a lung window, and the upper abdomen."></div>
+        <figcaption class="caption">Four viewports on one series: AI contours on a soft-tissue window (slice 41, WW 400 / WL 40), a colour map of the shoulder girdle (slice 61), the lung window (slice 31, WW 1786 / WL −228) and the upper abdomen with liver, kidneys and stomach (slice 1, WW 400 / WL 40).</figcaption>
+      </figure>
       <figure role="tabpanel" id="p-seg3d" aria-labelledby="t-seg3d" hidden>
-        <div class="figure-frame"><img src="img/anatomy3d.webp" width="1600" height="969" loading="lazy" alt="Three-dimensional surface reconstruction of the segmented organs of the chest and upper abdomen."></div>
-        <figcaption class="caption">Segmented structures turned into smooth surfaces and shown in 3D, colour-matched to the 2D overlay.</figcaption>
+        <div class="figure-frame"><img src="img/surf-lao-labels.webp" width="1600" height="836" loading="lazy" alt="Surfaces of the five lung lobes, trachea, heart, great vessels, portal and splenic vein and spinal cord, seen from the left anterior oblique."></div>
+        <figcaption class="caption">21 AutoSeg structures as surfaces, left anterior oblique, in the colours of the 2D overlay: five lung lobes, the trachea, the heart and great vessels, the portal and splenic vein, and the spinal cord. Each surface is calibrated to enclose its structure's voxel volume.</figcaption>
       </figure>
       <figure role="tabpanel" id="p-cine" aria-labelledby="t-cine" hidden>
         <div class="figure-frame"><img src="img/cinematic.webp" width="1600" height="969" loading="lazy" alt="Cinematic volume rendering of the chest CT with volumetric shadows and ambient occlusion."></div>
         <figcaption class="caption">Cinematic rendering with volumetric shadows, ambient occlusion and subsurface scattering derived from attenuation.</figcaption>
       </figure>
       <figure role="tabpanel" id="p-pt" aria-labelledby="t-pt" hidden>
-        <div class="figure-frame"><img src="img/pathtraced.webp" width="1600" height="969" loading="lazy" alt="Path-traced volume rendering of the chest CT."></div>
-        <figcaption class="caption">Unbiased volumetric path tracing: Woodcock-tracked free flights, multiple scattering, and progressive refinement while the view is still.</figcaption>
+        <div class="figure-frame"><img src="img/pt-anterior.webp" width="1600" height="836" loading="lazy" alt="Path-traced anterior view of the chest with the heart and aorta in red, the inferior vena cava in blue and the lung lobes in shades of blue."></div>
+        <figcaption class="caption">Unbiased volumetric path tracing after AutoSeg, anterior view. Each segmented structure takes its overlay colour — heart and aorta red, inferior vena cava blue, lung lobes in shades of blue — while unsegmented tissue such as the ribs keeps the transfer-function colour. Quality 200%, a 0.16 mm step.</figcaption>
       </figure>
+    </div>
+
+    <div class="mt-12 grid gap-12 lg:grid-cols-2">
+        <figure>
+          <div class="figure-frame"><img src="img/pt-cranial.webp" width="1600" height="836" loading="lazy" alt="Path-traced view down the thorax from the head: sternum, lung lobes, heart, vertebra with spinal canal, back muscles and scapulae."></div>
+          <figcaption class="caption">Path traced, looking down from the head: the sternum at the top, the lung lobes and heart, and the vertebral body around the spinal canal, flanked by the deep back muscles, with the scapulae at the sides.</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/pt-caudal.webp" width="1600" height="836" loading="lazy" alt="Path-traced view up the thorax from the feet: ribs, heart, inferior vena cava, aorta beside the spine and the spinal cord."></div>
+          <figcaption class="caption">Path traced, looking up from the feet, in the radiological convention (the patient's right on screen left): the heart on the patient's left, the inferior vena cava on the right, the aorta beside the spine and the spinal cord in its canal.</figcaption>
+        </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── segmentation in 3D ───────────────────────── -->
+<section id="surfaces" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">AXIO Workstation · Segmentation in 3D</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Every structure, as a surface you can check</h2>
+    <p class="lede mt-4">Each AutoSeg structure becomes a smooth surface calibrated to enclose its own segmented volume. Show it shaded, with its triangle mesh, or coloured by the direction it faces in the patient's axes.</p>
+
+    <div class="mt-10 grid gap-12 lg:grid-cols-2">
+      <div class="card">
+        <p class="eyebrow">Reading orientation colour</p>
+        <dl class="mt-4 space-y-3 text-[14px]">
+          <div class="flex justify-between gap-4"><dt class="font-semibold text-ink-1">Red</dt><dd class="text-right text-ink-2">faces the patient's left or right</dd></div>
+          <div class="flex justify-between gap-4"><dt class="font-semibold text-ink-1">Green</dt><dd class="text-right text-ink-2">faces front or back</dd></div>
+          <div class="flex justify-between gap-4"><dt class="font-semibold text-ink-1">Blue</dt><dd class="text-right text-ink-2">faces the head or the feet</dd></div>
+        </dl>
+        <p class="fine mt-5">Mixed hues mark oblique walls. Opposite directions share a colour, and the colour shows direction, not tissue — the same convention as diffusion-tensor colour maps and the viewer's orientation marker.</p>
+      </div>
+      <div class="card">
+        <p class="eyebrow">Case</p>
+        <dl class="mt-4 space-y-3 text-[14px]">
+          <div class="flex justify-between gap-4"><dt class="text-ink-3">Dataset</dt><dd class="text-right font-mono text-[13px]">TCIA LungCT-Diagnosis R_013</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-ink-3">Series</dt><dd class="text-right font-mono text-[13px]">Contrast-enhanced chest CT</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-ink-3">Volume</dt><dd class="text-right font-mono text-[13px]">512 × 512 × 67 · 0.62 × 0.62 × 5 mm</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-ink-3">Segmentation</dt><dd class="text-right font-mono text-[13px]">TotalSegmentator 2.18.0 · Apple Metal</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-ink-3">Structures</dt><dd class="text-right font-mono text-[13px]">85 · 10,408 ml</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="mt-12 grid gap-12 lg:grid-cols-2">
+        <figure>
+          <div class="figure-frame"><img src="img/seg-fill.webp" width="1600" height="825" loading="lazy" alt="Axial CT at the thoracic inlet with AI segmentation filled in colour: vertebra, spinal cord, back muscles, thyroid gland, oesophagus, carotid arteries, scapulae and humeral heads."></div>
+          <figcaption class="caption">The mask: fill overlay at the thoracic inlet (slice 67 of 67, WW 400 / WL 40) — vertebra and spinal cord, the deep back muscles, the thyroid gland either side of the trachea, the oesophagus, both common carotid arteries, the scapulae and both humeral heads, each in its own colour.</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/surf-lao-overlay.webp" width="1600" height="836" loading="lazy" alt="Surfaces of the lung lobes, heart, great vessels and spinal cord with their triangle mesh edges drawn on them, left anterior oblique."></div>
+          <figcaption class="caption">Surface + Wire, left anterior oblique: the same structures as surfaces, with the edges of their triangle meshes drawn on them. 21 structures, 523,728 triangles.</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/surf-lao-clear.webp" width="1600" height="836" loading="lazy" alt="The same view with translucent lung lobes, showing the heart and great vessels behind them."></div>
+          <figcaption class="caption">Clear lungs: the lobes turn translucent, so the heart and great vessels behind them stay in view.</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/surf-lao-wire-orient.webp" width="1600" height="836" loading="lazy" alt="Wireframe of the lung lobes and mediastinal structures, coloured by surface orientation."></div>
+          <figcaption class="caption">Wireframe in surface-orientation colour: every triangle edge, with hidden lines removed. The triangles are near-equilateral, and every change made to shape them is verified to stay within 0.05 mm of the surface.</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/surf-lao-orient.webp" width="1600" height="836" loading="lazy" alt="Shaded surfaces of the lung lobes and mediastinum coloured by orientation: anterior walls green, lateral walls red, the lung bases blue."></div>
+          <figcaption class="caption">Surface orientation: the anterior walls face forward (green), the lateral walls of the left lobes face left (red), and the lung bases face the feet (blue).</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/surf-rao-labels.webp" width="1600" height="836" loading="lazy" alt="Heart, aortic arch, descending aorta, venae cavae, pulmonary veins, brachiocephalic and subclavian vessels and the spinal cord, right anterior oblique."></div>
+          <figcaption class="caption">Right anterior oblique: the heart, the aortic arch and descending aorta, the superior and inferior venae cavae, the pulmonary veins, and the brachiocephalic and subclavian vessels above, with the spinal cord running behind.</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/surf-heart-right-labels.webp" width="1600" height="836" loading="lazy" alt="The heart from the patient's right with the superior and inferior venae cavae, pulmonary veins and left atrial appendage, triangle mesh overlaid."></div>
+          <figcaption class="caption">The heart from the patient's right, Surface + Wire, with the superior and inferior venae cavae, the pulmonary veins and the left atrial appendage. 15 structures, 158,252 triangles.</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/surf-heart-right-orient.webp" width="1600" height="836" loading="lazy" alt="The same view of the heart in orientation colour: walls facing right are red, anterior and posterior walls green."></div>
+          <figcaption class="caption">The same view in orientation colour: the walls facing the viewer — the patient's right — are red; walls turning toward the front or back go green.</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/surf-heart-top-labels.webp" width="1600" height="836" loading="lazy" alt="The heart and great vessels seen from above, with the superior vena cava, pulmonary veins, descending aorta and spinal cord."></div>
+          <figcaption class="caption">Seen from above: the heart and aorta, the superior vena cava (lavender), the pulmonary veins (slate), the descending aorta and the spinal cord (yellow).</figcaption>
+        </figure>
+        <figure>
+          <div class="figure-frame"><img src="img/surf-heart-top-orient.webp" width="1600" height="836" loading="lazy" alt="The same view from above in orientation colour."></div>
+          <figcaption class="caption">The same view in orientation colour: surfaces facing the head are blue, walls facing front or back green, and walls facing left or right red.</figcaption>
+        </figure>
     </div>
   </div>
 </section>
