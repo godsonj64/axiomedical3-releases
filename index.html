@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AXIO Medical — AI-integrated medical imaging workstation</title>
-<meta name="description" content="Free, MIT-licensed research software: a desktop DICOM workstation with AI segmentation of 117 structures, radiomics, opportunistic CT biomarkers and lung cancer risk prediction. Runs fully offline on macOS and Windows.">
+<title>AXIO Medical — imaging informatics workstation</title>
+<meta name="description" content="AXIO Medical is a free, MIT-licensed imaging informatics workstation for research: on-device segmentation of 117 structures, radiomics, opportunistic CT biomarkers and lung cancer risk, with a read-only link to your PACS. Runs offline on macOS and Windows.">
 <meta name="theme-color" content="#0b0c0f">
 <meta property="og:type" content="website">
-<meta property="og:title" content="AXIO Medical — AI-integrated medical imaging workstation">
-<meta property="og:description" content="Segmentation, radiomics, opportunistic biomarkers and lung cancer risk — computed on your own workstation, verified against independent references.">
+<meta property="og:title" content="AXIO Medical — imaging informatics workstation">
+<meta property="og:description" content="Routine scans turned into structured, verifiable measurements — segmentation, radiomics, opportunistic biomarkers and lung cancer risk — computed on your own workstation.">
 <meta property="og:image" content="https://godsonj64.github.io/axiomedical3-releases/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="img/favicon.png">
@@ -29,6 +29,7 @@
     <nav id="navLinks" aria-label="Primary"
          class="absolute left-0 right-0 top-16 hidden flex-col border-b border-line bg-panel px-6 py-2
                 md:static md:flex md:flex-row md:items-center md:gap-7 md:border-0 md:bg-transparent md:p-0">
+      <a class="nav-link" href="#platform">Platform</a>
       <a class="nav-link" href="#features">Features</a>
       <a class="nav-link" href="#accuracy">Accuracy</a>
       <a class="nav-link" href="#imaging">Imaging</a>
@@ -52,15 +53,16 @@
     <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-7">
         <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
-          An AI-integrated medical imaging workstation.
+          Imaging informatics, on your own workstation.
           <span class="text-accent-tint">Free.</span>
         </h1>
       </div>
       <div class="lg:col-span-5">
         <p class="text-[17px] leading-[1.7] text-ink-2">
-          View, measure and quantify medical images. Segmentation, radiomics, opportunistic CT
-          biomarkers and lung cancer risk run <span class="text-ink-1">locally on your own workstation</span> —
-          images never leave the machine, and nothing needs a network after first-run setup.
+          AXIO Medical turns routine scans into structured, verifiable measurements — segmentation,
+          radiomics, opportunistic CT biomarkers and lung cancer risk — computed
+          <span class="text-ink-1">locally, alongside your existing PACS</span>, with every number traced
+          back to the source pixels. Images never leave the machine.
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
           <a href="#download" class="btn-primary">Download free</a>
@@ -94,6 +96,33 @@
   </div>
 </aside>
 
+<!-- ───────────────────────── platform ───────────────────────── -->
+<section id="platform" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Platform</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Three software packages, one installer</h2>
+    <p class="lede mt-4">AXIO Medical 2.7 includes AXIO Workstation, AXIO Engines and AXIO Connect. They install together, work on the same loaded study, and keep every image on the machine.</p>
+
+    <ol class="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <li class="bg-panel p-6">
+        <span class="font-mono text-[12px] text-accent-tint">Desktop application</span>
+        <h3 class="mt-3 font-display text-[18px] font-semibold">AXIO Workstation</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">DICOM and NIfTI viewing and measurement, fail-closed series integrity checks, linked MPR with MIP, MinIP and mean slabs, and volume, cinematic, path-traced and segmentation-surface 3D.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="font-mono text-[12px] text-accent-tint">On-device AI runtime</span>
+        <h3 class="mt-3 font-display text-[18px] font-semibold">AXIO Engines</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Segmentation of up to 117 structures, 107 radiomic features per structure, 15+ opportunistic CT biomarkers and lung cancer risk — provisioned on first launch for NVIDIA CUDA, Apple Metal or CPU.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="font-mono text-[12px] text-accent-tint">PACS link</span>
+        <h3 class="mt-3 font-display text-[18px] font-semibold">AXIO Connect</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Read-only DICOMweb: QIDO-RS search and WADO-RS retrieval over HTTPS, with session-only credentials and de-identified audit events. It never writes to the archive.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <!-- ───────────────────────── workflow ───────────────────────── -->
 <section id="features" class="border-b border-line">
   <div class="wrap py-20 md:py-28">
@@ -105,7 +134,7 @@
       <li class="bg-panel p-6">
         <span class="font-mono text-[12px] text-accent-tint">01</span>
         <h3 class="mt-3 font-display text-[18px] font-semibold">Load</h3>
-        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">DICOM, NIfTI and common image formats, or query a PACS read-only over DICOMweb. CT, MR, X-ray, ultrasound, PET, nuclear medicine and mammography.</p>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">DICOM, NIfTI and common image formats, or query a PACS read-only through AXIO Connect. CT, MR, X-ray, ultrasound, PET, nuclear medicine and mammography.</p>
       </li>
       <li class="bg-panel p-6">
         <span class="font-mono text-[12px] text-accent-tint">02</span>
@@ -141,7 +170,7 @@
   <div class="wrap py-20 md:py-28">
     <div class="grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-5">
-        <p class="eyebrow">AI engines</p>
+        <p class="eyebrow">AXIO Engines</p>
         <h2 class="h-section mt-3">Four engines, installed for you</h2>
         <p class="lede mt-4">On first launch AXIO provisions its own Python runtime and isolated environments. It detects NVIDIA CUDA, Apple Metal or CPU and installs the matching build — no Python, compiler or conda required.</p>
 
@@ -309,7 +338,7 @@
 <!-- ───────────────────────── imaging ───────────────────────── -->
 <section id="imaging" class="border-b border-line bg-panel/40">
   <div class="wrap py-20 md:py-28">
-    <p class="eyebrow">Imaging</p>
+    <p class="eyebrow">AXIO Workstation · Imaging</p>
     <h2 class="h-section mt-3 max-w-[22ch]">Rendering tied to the stored values</h2>
     <p class="lede mt-4">A WebGPU renderer with a WebGL2 fallback, driven by transfer functions calibrated in Hounsfield units — so what you see follows the data, not an arbitrary colour ramp.</p>
 
