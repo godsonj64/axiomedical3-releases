@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AXIO Medical — imaging informatics workstation</title>
-<meta name="description" content="AXIO Medical is a free, MIT-licensed imaging informatics workstation for research: on-device segmentation of 117 structures, radiomics, opportunistic CT biomarkers and lung cancer risk, with a read-only link to your PACS. Runs offline on macOS and Windows.">
+<meta name="description" content="AXIO Medical is an imaging informatics workstation for research institutions: on-device segmentation of 117 structures, radiomics, opportunistic CT biomarkers and lung cancer risk, with a read-only link to your PACS. 30-day trial; institutional licensing. Runs offline on macOS and Windows.">
 <meta name="theme-color" content="#0b0c0f">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AXIO Medical — imaging informatics workstation">
@@ -35,9 +35,10 @@
       <a class="nav-link" href="#imaging">Imaging</a>
       <a class="nav-link" href="#surfaces">3D surfaces</a>
       <a class="nav-link" href="#specs">Specifications</a>
+      <a class="nav-link" href="#licensing">Licensing</a>
     </nav>
     <div class="ml-auto flex items-center gap-3">
-      <a href="#download" class="btn-primary hidden sm:inline-flex">Download 2.7.1</a>
+      <a href="#download" class="btn-primary hidden sm:inline-flex">Start 30-day trial</a>
       <button id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"
               class="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-2 hover:bg-panel-2 md:hidden">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
@@ -55,7 +56,7 @@
       <div class="lg:col-span-7">
         <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
           Imaging informatics, on your own workstation.
-          <span class="text-accent-tint">Free.</span>
+          <span class="text-accent-tint">Try it for 30 days.</span>
         </h1>
       </div>
       <div class="lg:col-span-5">
@@ -66,8 +67,8 @@
           back to the source pixels. Images never leave the machine.
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
-          <a href="#download" class="btn-primary">Download free</a>
-          <a href="#accuracy" class="btn-secondary">How it is verified</a>
+          <a href="#download" class="btn-primary">Start 30-day trial</a>
+          <a href="#licensing" class="btn-secondary">Institutional licensing</a>
         </div>
       </div>
     </div>
@@ -150,17 +151,17 @@
       <li class="bg-panel p-6">
         <span class="font-mono text-[12px] text-accent-tint">04</span>
         <h3 class="mt-3 font-display text-[18px] font-semibold">Segment</h3>
-        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">TotalSegmentator labels up to 117 structures. Review the masks slice by slice, correct them with a brush, and export them as NIfTI.</p>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">AutoSeg labels up to 117 structures. Review the masks slice by slice, correct them with a brush, and export them as NIfTI.</p>
       </li>
       <li class="bg-panel p-6">
         <span class="font-mono text-[12px] text-accent-tint">05</span>
         <h3 class="mt-3 font-display text-[18px] font-semibold">Quantify</h3>
-        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">PyRadiomics features for every structure, and opportunistic biomarkers — steatosis, emphysema, bone density, aortic diameter, organ volumes — each with its reference range and citation.</p>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Radiomic features for every structure, and opportunistic biomarkers — steatosis, emphysema, bone density, aortic diameter, organ volumes — each with its reference range and citation.</p>
       </li>
       <li class="bg-panel p-6">
         <span class="font-mono text-[12px] text-accent-tint">06</span>
         <h3 class="mt-3 font-display text-[18px] font-semibold">Assess risk</h3>
-        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Sybil estimates 1–6 year lung cancer risk from a single low-dose chest CT, with an attention map of the regions that drove the score.</p>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">A deep-learning risk model estimates 1–6 year lung cancer risk from a single low-dose chest CT, with an attention map of the regions that drove the score.</p>
       </li>
     </ol>
   </div>
@@ -177,11 +178,11 @@
 
         <dl class="mt-10 divide-y divide-line border-y border-line">
           <div class="py-5">
-            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Auto-segmentation</span><span class="font-mono text-[12px] text-ink-4">TotalSegmentator 2.17 · nnU-Net 2.8</span></dt>
+            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Auto-segmentation</span><span class="font-mono text-[12px] text-ink-4">117 structures</span></dt>
             <dd class="mt-2 text-[14px] leading-relaxed text-ink-2">Up to 117 structures at 1.5 mm, grouped by system, with per-structure volumes.</dd>
           </div>
           <div class="py-5">
-            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Radiomics</span><span class="font-mono text-[12px] text-ink-4">PyRadiomics 3.0.1</span></dt>
+            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Radiomics</span><span class="font-mono text-[12px] text-ink-4">107 features</span></dt>
             <dd class="mt-2 text-[14px] leading-relaxed text-ink-2">107 IBSI-aligned features per structure across seven classes, computed on the exact segmentation grid.</dd>
           </div>
           <div class="py-5">
@@ -189,7 +190,7 @@
             <dd class="mt-2 text-[14px] leading-relaxed text-ink-2">Measurements a routine CT already contains, graded against published thresholds — and left ungraded where a threshold does not apply, such as fatty-liver criteria on contrast CT.</dd>
           </div>
           <div class="py-5">
-            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Lung cancer risk</span><span class="font-mono text-[12px] text-ink-4">Sybil 1.7.2 · NLST</span></dt>
+            <dt class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"><span class="font-display text-[17px] font-semibold">Lung cancer risk</span><span class="font-mono text-[12px] text-ink-4">1–6 year horizon</span></dt>
             <dd class="mt-2 text-[14px] leading-relaxed text-ink-2">A 1–6 year cumulative risk trajectory with an attention map. Valid only for low-dose screening CT in the population it was trained on.</dd>
           </div>
         </dl>
@@ -329,9 +330,9 @@
         <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Segmentation</dt><dd class="stat-num mt-1 text-[24px]">84 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">85 structures · Apple GPU</dd></div>
         <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Radiomics</dt><dd class="stat-num mt-1 text-[24px]">120 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">85 structures · CPU</dd></div>
         <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Biomarkers</dt><dd class="stat-num mt-1 text-[24px]">3 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">15 measures</dd></div>
-        <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Lung risk</dt><dd class="stat-num mt-1 text-[24px]">358 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">Sybil ensemble · CPU</dd></div>
+        <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Lung risk</dt><dd class="stat-num mt-1 text-[24px]">358 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">risk-model ensemble · CPU</dd></div>
       </dl>
-      <p class="fine mt-4">About nine and a half minutes end to end on a laptop, with no server and no network. Most of it is the lung-risk ensemble on CPU; choosing a single Sybil model instead finishes that step in about a minute.</p>
+      <p class="fine mt-4">About nine and a half minutes end to end on a laptop, with no server and no network. Most of it is the lung-risk ensemble on CPU; choosing a single model of the ensemble instead finishes that step in about a minute.</p>
     </div>
   </div>
 </section>
@@ -410,7 +411,7 @@
           <div class="flex justify-between gap-4"><dt class="text-ink-3">Dataset</dt><dd class="text-right font-mono text-[13px]">TCIA LungCT-Diagnosis R_013</dd></div>
           <div class="flex justify-between gap-4"><dt class="text-ink-3">Series</dt><dd class="text-right font-mono text-[13px]">Contrast-enhanced chest CT</dd></div>
           <div class="flex justify-between gap-4"><dt class="text-ink-3">Volume</dt><dd class="text-right font-mono text-[13px]">512 × 512 × 67 · 0.62 × 0.62 × 5 mm</dd></div>
-          <div class="flex justify-between gap-4"><dt class="text-ink-3">Segmentation</dt><dd class="text-right font-mono text-[13px]">TotalSegmentator 2.18.0 · Apple Metal</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-ink-3">Segmentation</dt><dd class="text-right font-mono text-[13px]">AutoSeg · on-device, Apple Metal</dd></div>
           <div class="flex justify-between gap-4"><dt class="text-ink-3">Structures</dt><dd class="text-right font-mono text-[13px]">85 · 10,408 ml</dd></div>
         </dl>
       </div>
@@ -468,10 +469,10 @@
       <div class="lg:col-span-5">
         <p class="eyebrow">Lung cancer risk</p>
         <h2 class="h-section mt-3">A risk model, used within its limits</h2>
-        <p class="lede mt-4">Sybil, developed at MIT and trained on the National Lung Screening Trial, estimates cumulative lung cancer risk from one to six years out, and shows where in the scan it looked.</p>
+        <p class="lede mt-4">A deep-learning model trained on the National Lung Screening Trial estimates cumulative lung cancer risk from one to six years out, and shows where in the scan it looked.</p>
         <div class="mt-8 rounded-lg border border-bad/30 bg-bad/[0.06] p-5">
           <p class="text-[14px] font-semibold text-bad">Shown as software output only</p>
-          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Sybil is validated on low-dose screening CT in adults aged 55–74 with a significant smoking history. The example here is a contrast-enhanced diagnostic scan — outside that population — so its numbers demonstrate that the engine runs and are not a valid risk assessment. An attention map is not a detection.</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">The model is validated on low-dose screening CT in adults aged 55–74 with a significant smoking history. The example here is a contrast-enhanced diagnostic scan — outside that population — so its numbers demonstrate that the engine runs and are not a valid risk assessment. An attention map is not a detection.</p>
         </div>
       </div>
       <figure class="lg:col-span-7">
@@ -489,14 +490,14 @@
     <h2 class="h-section mt-3">What is inside, and what it needs</h2>
     <div class="mt-12 grid gap-12 lg:grid-cols-2">
       <div>
-        <h3 class="font-display text-[18px] font-semibold">Bundled engines</h3>
+        <h3 class="font-display text-[18px] font-semibold">Included</h3>
         <table class="tbl mt-4"><tbody>
-          <tr><td>TotalSegmentator</td><td>2.17.0 · Apache-2.0</td></tr>
-          <tr><td>nnU-Net</td><td>2.8.1 · Apache-2.0</td></tr>
-          <tr><td>PyRadiomics</td><td>3.0.1 · BSD-3</td></tr>
-          <tr><td>Sybil</td><td>1.7.2 · MIT</td></tr>
-          <tr><td>PyTorch</td><td>2.13.0</td></tr>
-          <tr><td>Three.js</td><td>0.160.1 · MIT</td></tr>
+          <tr><td>AXIO Workstation</td><td>Viewing, MPR, 3D, measurement</td></tr>
+          <tr><td>AXIO Engines</td><td>On-device AI, installed on first launch</td></tr>
+          <tr><td>AXIO Connect</td><td>Read-only DICOMweb PACS link</td></tr>
+          <tr><td>Licence activation</td><td>Offline, no licence server</td></tr>
+          <tr><td>Data</td><td>Images never leave the workstation</td></tr>
+          <tr><td>Intended use</td><td>Research and education</td></tr>
         </tbody></table>
       </div>
       <div>
@@ -514,19 +515,44 @@
   </div>
 </section>
 
+<!-- ───────────────────────── licensing ───────────────────────── -->
+<section id="licensing" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Licensing</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Evaluate for 30 days, then license for your institution</h2>
+    <p class="lede mt-4">AXIO Medical is licensed to research institutions. Every installation starts as a 30-day trial of the complete workstation; an institutional licence key keeps it running after that.</p>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2">
+      <div class="card flex flex-col">
+        <p class="eyebrow">Trial</p>
+        <h3 class="mt-3 font-display text-[20px] font-semibold">30 days, every feature</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">AXIO Workstation, AXIO Engines and AXIO Connect in full, for 30 days from the first launch. No account and no sign-up — download, install and run it on your own cases.</p>
+        <div class="mt-6"><a href="#download" class="btn-primary">Start 30-day trial</a></div>
+      </div>
+      <div class="card flex flex-col">
+        <p class="eyebrow">Institutional licence</p>
+        <h3 class="mt-3 font-display text-[20px] font-semibold">For departments and research groups</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">A licence key for your institution, with terms, workstations and support agreed with you. Keys are checked on the workstation itself, so they work on air-gapped research machines.</p>
+        <div class="mt-6"><a href="mailto:godson@axiomaticresearch.com?subject=AXIO%20Medical%20institutional%20licence" class="btn-secondary">Contact licensing</a></div>
+      </div>
+    </div>
+    <p class="fine mt-6">Licensing enquiries: <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="mailto:godson@axiomaticresearch.com?subject=AXIO%20Medical%20institutional%20licence">godson@axiomaticresearch.com</a>. AXIO Medical is licensed for research and educational use; it is not a medical device.</p>
+  </div>
+</section>
+
 <!-- ───────────────────────── download ───────────────────────── -->
 <section id="download">
   <div class="wrap py-20 md:py-28">
     <div class="grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-5">
         <p class="eyebrow">Download</p>
-        <h2 class="h-section mt-3">AXIO Medical 2.7.1</h2>
-        <p class="lede mt-4">Free and MIT-licensed. No account, no licence key, no telemetry.</p>
+        <h2 class="h-section mt-3">AXIO Medical 2.7.2</h2>
+        <p class="lede mt-4">The 30-day trial. No account needed and no telemetry; enter your institution's licence key to keep using it afterwards.</p>
         <div class="mt-8 rounded-lg border border-accent/30 bg-accent/[0.06] p-5">
-          <p class="text-[14px] font-semibold text-ink-1">New in 2.7</p>
+          <p class="text-[14px] font-semibold text-ink-1">New in 2.7.2</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">The 30-day trial and institutional licence keys, activated offline under Help → Licence.</p>
+          <p class="mt-3 text-[14px] font-semibold text-ink-1">New in 2.7</p>
           <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Colour segmented structures in 3D by the direction they face in the patient's axes — left–right red, front–back green, head–foot blue — and see the full triangle mesh of every surface as a wireframe. The mesh is even and near-equilateral, and every change to it is checked to stay within 0.05 mm of the surface.</p>
-          <p class="mt-3 text-[14px] font-semibold text-ink-1">Also since 2.4.1</p>
-          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">2.5.0 colours 3D organs by anatomy and smooths segmentation surfaces between slices. 2.6.0 keeps thin vessels and bone edges visible in 3D, and lets you click any point in the 3D view to open it on the original CT slice.</p>
         </div>
       </div>
       <div class="grid gap-5 sm:grid-cols-2 lg:col-span-7">
@@ -534,20 +560,20 @@
           <h3 class="font-display text-[18px] font-semibold">macOS</h3>
           <p class="mt-1 text-[13px] text-ink-3">macOS 11+ · Universal (Apple Silicon &amp; Intel)</p>
           <div class="mt-6 flex flex-col gap-3">
-            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.7.1/AXIO.Medical-2.7.1-universal.dmg">Disk image <span class="font-normal opacity-80">· 189 MB</span></a>
-            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.7.1/AXIO.Medical-2.7.1-universal-mac.zip">Zipped app <span class="font-normal text-ink-3">· 208 MB</span></a>
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.7.2/AXIO.Medical-2.7.2-universal.dmg">Disk image <span class="font-normal opacity-80">· 189 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.7.2/AXIO.Medical-2.7.2-universal-mac.zip">Zipped app <span class="font-normal text-ink-3">· 208 MB</span></a>
           </div>
         </div>
         <div class="card flex flex-col">
           <h3 class="font-display text-[18px] font-semibold">Windows</h3>
           <p class="mt-1 text-[13px] text-ink-3">Windows 10 / 11 · x64</p>
           <div class="mt-6 flex flex-col gap-3">
-            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.7.1/AXIO.Medical.Setup.2.7.1.exe">Installer <span class="font-normal opacity-80">· 97 MB</span></a>
-            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.7.1/AXIO.Medical.2.7.1.exe">Portable <span class="font-normal text-ink-3">· 96 MB</span></a>
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.7.2/AXIO.Medical.Setup.2.7.2.exe">Installer <span class="font-normal opacity-80">· 97 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.7.2/AXIO.Medical.2.7.2.exe">Portable <span class="font-normal text-ink-3">· 96 MB</span></a>
           </div>
         </div>
         <div class="sm:col-span-2">
-          <p class="fine">These builds are not signed with a paid code-signing certificate. On macOS, right-click the app and choose <span class="text-ink-2">Open</span>; on Windows, choose <span class="text-ink-2">More info → Run anyway</span> if SmartScreen appears. Verify downloads against the SHA-256 checksums in the <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.7.1">release notes</a>.</p>
+          <p class="fine">These builds are not signed with a paid code-signing certificate. On macOS, right-click the app and choose <span class="text-ink-2">Open</span>; on Windows, choose <span class="text-ink-2">More info → Run anyway</span> if SmartScreen appears. Verify downloads against the SHA-256 checksums in the <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.7.2">release notes</a>.</p>
         </div>
       </div>
     </div>
@@ -560,10 +586,10 @@
   <div class="wrap grid gap-10 py-12 md:grid-cols-12">
     <div class="md:col-span-5">
       <img src="img/logo.png" alt="AXIO Medical" class="h-7 w-auto" width="66" height="28">
-      <p class="fine mt-4">Developed by <span class="text-ink-2">Godson Johnson</span> · Axiomatic Research · <span data-year>2026</span>.<br>AXIO Medical is MIT licensed and free to use.</p>
+      <p class="fine mt-4">Developed by <span class="text-ink-2">Godson Johnson</span> · Axiomatic Research · <span data-year>2026</span>.<br>AXIO Medical is licensed software. Licensing: <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="mailto:godson@axiomaticresearch.com?subject=AXIO%20Medical%20institutional%20licence">godson@axiomaticresearch.com</a></p>
     </div>
     <div class="md:col-span-7">
-      <p class="fine">Bundled open-source engines: TotalSegmentator (Apache-2.0) · nnU-Net (Apache-2.0) · PyRadiomics (BSD-3) · Sybil (MIT — Mikhael et al., <em>J Clin Oncol</em> 2023) · Three.js (MIT). Imaging shown is from the public, de-identified TCIA <em>LungCT-Diagnosis</em> collection.</p>
+      <p class="fine">Imaging shown is from the public, de-identified TCIA <em>LungCT-Diagnosis</em> collection.</p>
       <p class="mt-4 text-[12px] leading-relaxed text-ink-4">Not cleared by the FDA, CE-marked, or approved by any regulatory authority for clinical use. All quantitative outputs are exploratory and must be interpreted by qualified researchers. Not for primary diagnosis or clinical decision-making.</p>
     </div>
   </div>
