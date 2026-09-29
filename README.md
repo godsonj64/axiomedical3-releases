@@ -1,9 +1,11 @@
 # AXIO Medical — Releases
 
-Official download channel for **AXIO Medical**, a desktop medical imaging
-platform for **research and educational use**.
+Official download channel for **AXIO Medical**, an imaging informatics
+workstation for **research and educational use**.
 
 Grab the latest installers from the [Releases page](../../releases/latest).
+Every installation runs as a **30-day trial**; continued use needs an
+institutional licence.
 
 ## Downloads
 
@@ -43,6 +45,17 @@ shasum -a 256 "AXIO Medical Setup 2.2.0.exe"
 Get-FileHash "AXIO Medical Setup 2.2.0.exe" -Algorithm SHA256
 ```
 
+## Licensing
+
+- **30-day trial** — the full workstation for 30 days from first launch; no account needed.
+- **Institutional licence** — a licence key for your institution, entered under
+  *Help → Licence…*. Keys are checked on the workstation, so activation works offline.
+- Licensing enquiries: **godson@axiomaticresearch.com**
+
+AXIO Medical 2.7.2 and later are licensed software; the licence terms ship with the
+app (`LICENSE.txt`), together with the notices for its third-party components.
+Versions 2.7.1 and earlier were released under the MIT License.
+
 ## Intended use
 
 AXIO Medical is provided for **research and education only**. It is **not** a
@@ -55,4 +68,4 @@ Found a problem with a build? Open an issue on this repository.
 
 ---
 
-© 2026 AXIO Medical. Released under the MIT License.
+© 2026 Axiomatic Research. AXIO Medical is licensed software (2.7.2 and later).
