@@ -13,10 +13,11 @@ institutional licence.
 | --- | --- | --- |
 | Windows 10/11 (x64) | `AXIO Medical Setup <version>.exe` | Installer — choose your install location, creates Desktop and Start Menu shortcuts |
 | Windows 10/11 (x64) | `AXIO Medical <version>.exe` | Portable — run directly, no installation |
-| macOS 11+ (Universal) | `AXIO Medical-<version>-universal.dmg` | Drag to Applications |
-| macOS 11+ (Universal) | `AXIO Medical-<version>-universal-mac.zip` | Zipped app bundle |
+| macOS 11+ (Apple Silicon) | `AXIO Medical-<version>-arm64.dmg` | Drag to Applications |
+| macOS 11+ (Apple Silicon) | `AXIO Medical-<version>-arm64-mac.zip` | Zipped app bundle |
 
-The macOS universal build runs natively on both Apple Silicon and Intel Macs.
+The macOS build is for Apple Silicon (M1 and later). 2.8.8 is the last version
+for Intel Macs; it stays available on the [Releases page](../../releases/tag/v2.8.8).
 
 ## Installation notes
 
@@ -37,12 +38,12 @@ installing:
 
 ```bash
 # macOS / Linux
-shasum -a 256 "AXIO Medical Setup 2.8.8.exe"
+shasum -a 256 "AXIO Medical Setup 2.8.9.exe"
 ```
 
 ```powershell
 # Windows PowerShell
-Get-FileHash "AXIO Medical Setup 2.8.8.exe" -Algorithm SHA256
+Get-FileHash "AXIO Medical Setup 2.8.9.exe" -Algorithm SHA256
 ```
 
 ## Licensing
