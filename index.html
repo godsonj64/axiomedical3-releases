@@ -539,7 +539,7 @@
       <div>
         <h3 class="font-display text-[18px] font-semibold">Requirements</h3>
         <table class="tbl mt-4"><tbody>
-          <tr><td>macOS</td><td>11 or later · Apple Silicon &amp; Intel</td></tr>
+          <tr><td>macOS</td><td>11 or later · Apple Silicon (Intel Macs: 2.8.8)</td></tr>
           <tr><td>Windows</td><td>10 / 11 · x64</td></tr>
           <tr><td>Memory</td><td>16 GB recommended</td></tr>
           <tr><td>Acceleration</td><td>Apple Metal, NVIDIA CUDA or CPU</td></tr>
@@ -582,11 +582,11 @@
     <div class="grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-5">
         <p class="eyebrow">Download</p>
-        <h2 class="h-section mt-3">AXIO Medical 2.8.8</h2>
+        <h2 class="h-section mt-3">AXIO Medical 2.8.9</h2>
         <p class="lede mt-4">The 30-day trial. No account needed and no telemetry; enter your institution's licence key to keep using it afterwards.</p>
         <div class="mt-8 rounded-lg border border-accent/30 bg-accent/[0.06] p-5">
-          <p class="text-[14px] font-semibold text-ink-1">New in 2.8.8</p>
-          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Path Traced 3D can be lit by a photographic environment — studio, operating theatre, overcast sky, window light or your own HDR image. Segmented organs render as real surfaces with highlights, and a Solid organs option keeps their shape smooth on thick-slice scans. The causes of bright speckles in Path Traced renders are fixed.</p>
+          <p class="text-[14px] font-semibold text-ink-1">New in 2.8.9</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Every biomarker is checked against how the scan was acquired before it is graded, and compared with the patient's earlier studies. Export results to PACS as DICOM SEG and SR, read lung screening CTs with Lung-RADS v2022 and optional nodule detection, measure PET lesions (SUVpeak, tumour volume, TLG) and whole-slice body composition at L3, save viewing layouts per study type, and export de-identified DICOM.</p>
           <p class="mt-3 text-[14px] font-semibold text-ink-1">New in 2.8</p>
           <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Cinematic 3D with soft studio lighting, gloss only where the scan has a real boundary, and clip planes that show the CT on the cut face. Smooth 3D navigation, MR and PET volumes in 3D, and measurements validated against an independent reference on public clinical series.</p>
         </div>
@@ -594,22 +594,23 @@
       <div class="grid gap-5 sm:grid-cols-2 lg:col-span-7">
         <div class="card flex flex-col">
           <h3 class="font-display text-[18px] font-semibold">macOS</h3>
-          <p class="mt-1 text-[13px] text-ink-3">macOS 11+ · Universal (Apple Silicon &amp; Intel)</p>
+          <p class="mt-1 text-[13px] text-ink-3">macOS 11+ · Apple Silicon (M1 and later)</p>
           <div class="mt-6 flex flex-col gap-3">
-            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.8/AXIO.Medical-2.8.8-universal.dmg">Disk image <span class="font-normal opacity-80">· 198 MB</span></a>
-            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.8/AXIO.Medical-2.8.8-universal-mac.zip">Zipped app <span class="font-normal text-ink-3">· 218 MB</span></a>
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.9/AXIO.Medical-2.8.9-arm64.dmg">Disk image <span class="font-normal opacity-80">· 112 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.9/AXIO.Medical-2.8.9-arm64-mac.zip">Zipped app <span class="font-normal text-ink-3">· 123 MB</span></a>
           </div>
+          <p class="fine mt-3">Intel Mac? <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.8.8">2.8.8</a> is the last version for Intel Macs.</p>
         </div>
         <div class="card flex flex-col">
           <h3 class="font-display text-[18px] font-semibold">Windows</h3>
           <p class="mt-1 text-[13px] text-ink-3">Windows 10 / 11 · x64</p>
           <div class="mt-6 flex flex-col gap-3">
-            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.8/AXIO.Medical.Setup.2.8.8.exe">Installer <span class="font-normal opacity-80">· 102 MB</span></a>
-            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.8/AXIO.Medical.2.8.8.exe">Portable <span class="font-normal text-ink-3">· 101 MB</span></a>
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.9/AXIO.Medical.Setup.2.8.9.exe">Installer <span class="font-normal opacity-80">· 103 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.9/AXIO.Medical.2.8.9.exe">Portable <span class="font-normal text-ink-3">· 102 MB</span></a>
           </div>
         </div>
         <div class="sm:col-span-2">
-          <p class="fine">These builds are not signed with a paid code-signing certificate. On macOS, open the app once, then choose <span class="text-ink-2">Open Anyway</span> under System Settings → Privacy &amp; Security; on Windows, choose <span class="text-ink-2">More info → Run anyway</span> if SmartScreen appears. Verify downloads against the SHA-256 checksums in the <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.8.8">release notes</a>.</p>
+          <p class="fine">These builds are not signed with a paid code-signing certificate. On macOS, open the app once, then choose <span class="text-ink-2">Open Anyway</span> under System Settings → Privacy &amp; Security; on Windows, choose <span class="text-ink-2">More info → Run anyway</span> if SmartScreen appears. Verify downloads against the SHA-256 checksums in the <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.8.9">release notes</a>.</p>
         </div>
       </div>
     </div>
