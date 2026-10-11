@@ -53,7 +53,7 @@
 <!-- ───────────────────────── hero ───────────────────────── -->
 <section id="top" class="border-b border-line">
   <div class="wrap pb-16 pt-16 md:pb-20 md:pt-24">
-    <p class="eyebrow">Product overview · AXIO Medical 2.8.10</p>
+    <p class="eyebrow">Product overview · AXIO Medical 2.8.12</p>
     <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-7">
         <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
@@ -154,7 +154,7 @@
       <li class="bg-panel p-6">
         <span class="module">02</span>
         <h3 class="card-title">Verify</h3>
-        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">A deterministic integrity check of identity, matrix, spacing, orientation, slice gaps and rescale.</p>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">A deterministic integrity check of identity, matrix, spacing, orientation, slice gaps, slice alignment and rescale.</p>
       </li>
       <li class="bg-panel p-6">
         <span class="module">03</span>
@@ -272,20 +272,20 @@
         <span class="module">Body composition</span>
         <h3 class="card-title">Whole-slice L3 analysis</h3>
         <ul class="bullets mt-4">
-          <li>Skeletal muscle area and index, graded for sarcopenia</li>
+          <li>Skeletal muscle area and index, graded for low muscle quantity</li>
           <li>Muscle attenuation, graded for myosteatosis</li>
           <li>Visceral, subcutaneous and intermuscular fat</li>
-          <li>A QC tissue map of the slice, with no licensed tissue model required</li>
+          <li>A QC tissue map of the slice, with no licensed tissue model required; graded only when the abdominal wall is traced</li>
         </ul>
       </div>
       <div class="card">
         <span class="module">Radiomics</span>
-        <h3 class="card-title">PyRadiomics, IBSI-referenced</h3>
+        <h3 class="card-title">PyRadiomics features</h3>
         <ul class="bullets mt-4">
           <li>107 features per structure: first-order, shape, GLCM, GLRLM, GLSZM, GLDM and NGTDM</li>
           <li>Optional wavelet and Laplacian-of-Gaussian filtered features</li>
           <li>Configurable bin width; features grouped by class and filterable</li>
-          <li>CSV export for statistical analysis</li>
+          <li>CSV export for statistical analysis, recording the PyRadiomics version, bin width and conventions</li>
         </ul>
       </div>
     </div>
@@ -306,8 +306,8 @@
             <tr><td>Liver − spleen attenuation</td><td>&le; −10 HU: steatosis (non-contrast only)</td><td class="ref">Boyce 2010</td></tr>
             <tr><td>Emphysema index (LAA%<sub>−950</sub>)</td><td>&gt; 6 % of lung below −950 HU</td><td class="ref">Lynch 2015 (Fleischner); COPDGene</td></tr>
             <tr><td>Perc15</td><td>15th-percentile lung attenuation, reported</td><td class="ref">Dirksen 1997</td></tr>
-            <tr><td>Vertebral trabecular attenuation</td><td>L1 &lt; 110 HU: osteoporosis likely; 110–160 HU: osteopenia</td><td class="ref">Pickhardt 2013</td></tr>
-            <tr><td>Maximum aortic diameter</td><td>&ge; 30 mm (abdominal aorta)</td><td class="ref">USPSTF 2019</td></tr>
+            <tr><td>Vertebral trabecular attenuation</td><td>Mean of the trabecular core at L1: &le; 110 HU low; 111–160 HU intermediate</td><td class="ref">Pickhardt 2013</td></tr>
+            <tr><td>Maximum aortic diameter</td><td>Perpendicular to the vessel: &ge; 30 mm (abdominal aorta); below 30 mm reported, not graded normal</td><td class="ref">USPSTF 2019; ACC/AHA 2022</td></tr>
             <tr><td>Vascular wall calcification</td><td>Screening indicator, non-gated</td><td class="ref">adapted Agatston</td></tr>
             <tr><td>Organ volumes</td><td>Population ranges: hepatomegaly, splenomegaly</td><td class="ref">population volumetry</td></tr>
             <tr><td>Skeletal muscle index at L3</td><td>&lt; 41 cm&sup2;/m&sup2; women; &lt; 43 men with BMI &lt; 25; &lt; 53 men with BMI &ge; 25</td><td class="ref">Martin 2013</td></tr>
