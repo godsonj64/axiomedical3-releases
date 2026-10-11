@@ -19,7 +19,7 @@
       setOpen(toggle.getAttribute('aria-expanded') !== 'true');
     });
     nav.addEventListener('click', function (e) {
-      if (e.target.closest('a') && window.innerWidth < 768) setOpen(false);
+      if (e.target.closest('a') && window.innerWidth < 1024) setOpen(false);
     });
   }
 

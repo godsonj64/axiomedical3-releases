@@ -1,7 +1,7 @@
 // Tokens mirror AXIO Medical 2.4.1's own stylesheet (css/styles.css :root) so
 // the site and the product read as one system.
 module.exports = {
-  content: ['./index.html', './assets/app.js'],
+  content: ['./index.html', './overview.html', './assets/app.js'],
   theme: {
     extend: {
       colors: {

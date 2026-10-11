@@ -59,4 +59,17 @@
 
   .tab { @apply inline-flex min-h-[40px] items-center rounded-md border border-line bg-panel px-4 text-[14px] text-ink-2 transition-colors hover:text-ink-1; }
   .tab[aria-selected="true"] { @apply border-accent/50 bg-accent/10 text-ink-1; }
+
+  /* product overview */
+  .bullets { @apply space-y-2 text-[14px] leading-relaxed text-ink-2; }
+  .bullets li { @apply relative pl-4; }
+  .bullets li::before { content: ""; @apply absolute left-0 top-[0.62em] h-[5px] w-[5px] rounded-full bg-accent; }
+  .module { @apply font-mono text-[12px] text-accent-tint; }
+  .card-title { @apply mt-3 font-display text-[18px] font-semibold; }
+  .reftbl { @apply w-full border-collapse text-left text-[14px]; }
+  .reftbl th { @apply border-b border-line pb-2 pr-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-ink-4; }
+  .reftbl td { @apply border-b border-line py-2.5 pr-4 align-top text-ink-2; }
+  .reftbl td:first-child { @apply text-ink-1; }
+  .reftbl td.ref { @apply font-mono text-[12px] text-ink-3; }
+  .reftbl tr:last-child td { @apply border-b-0; }
 }

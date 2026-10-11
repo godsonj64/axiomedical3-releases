@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AXIO Medical — Product overview</title>
+<meta name="description" content="AXIO Medical is a complete imaging workstation for clinical research: verified DICOM input, on-device AI segmentation, opportunistic CT biomarkers, L3 body composition, lung screening, PET quantification, reader review, DICOM SEG and SR output, cohort analysis and de-identification. Research use only.">
+<meta name="theme-color" content="#0b0c0f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AXIO Medical — Product overview">
+<meta property="og:description" content="A complete imaging workstation for clinical research — from routine scans to reviewed, research-ready data, on one secure workstation.">
+<meta property="og:image" content="https://godsonj64.github.io/axiomedical3-releases/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent-strong focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ───────────────────────── header ───────────────────────── -->
+<header class="sticky top-0 z-50 border-b border-line bg-ground/85 backdrop-blur-md">
+  <div class="wrap flex h-16 items-center gap-8">
+    <a href="index.html" class="shrink-0" aria-label="AXIO Medical home"><img src="img/logo.png" alt="AXIO Medical" class="h-7 w-auto" width="66" height="28"></a>
+    <nav id="navLinks" aria-label="Primary"
+         class="absolute left-0 right-0 top-16 hidden flex-col border-b border-line bg-panel px-6 py-2
+                lg:static lg:flex lg:flex-row lg:items-center lg:gap-7 lg:border-0 lg:bg-transparent lg:p-0">
+      <a class="nav-link active" href="overview.html" aria-current="page">Overview</a>
+      <a class="nav-link" href="index.html#platform">Platform</a>
+      <a class="nav-link" href="index.html#features">Features</a>
+      <a class="nav-link" href="index.html#accuracy">Accuracy</a>
+      <a class="nav-link" href="index.html#imaging">Imaging</a>
+      <a class="nav-link" href="index.html#surfaces">3D surfaces</a>
+      <a class="nav-link" href="index.html#specs">Specifications</a>
+      <a class="nav-link" href="index.html#licensing">Licensing</a>
+    </nav>
+    <div class="ml-auto flex items-center gap-3">
+      <a href="index.html#download" class="btn-primary hidden sm:inline-flex">Start 30-day trial</a>
+      <button id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"
+              class="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-2 hover:bg-panel-2 lg:hidden">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ───────────────────────── hero ───────────────────────── -->
+<section id="top" class="border-b border-line">
+  <div class="wrap pb-16 pt-16 md:pb-20 md:pt-24">
+    <p class="eyebrow">Product overview · AXIO Medical 2.8.10</p>
+    <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-7">
+        <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
+          A complete imaging workstation for clinical research.
+          <span class="text-accent-tint">From routine scans to reviewed, research-ready data.</span>
+        </h1>
+      </div>
+      <div class="lg:col-span-5">
+        <p class="text-[17px] leading-[1.7] text-ink-2">
+          AXIO Medical takes a study from your PACS or disk, verifies the scan, segments the anatomy with AI and
+          extracts quantitative biomarkers, lung screening and PET measurements. A named reader reviews every result
+          before it is exported as standard DICOM or added to a de-identified cohort dataset —
+          <span class="text-ink-1">all on the workstation, so patient images never leave the institution</span>.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="index.html#download" class="btn-primary">Start 30-day trial</a>
+          <a href="index.html#licensing" class="btn-secondary">Institutional licensing</a>
+        </div>
+      </div>
+    </div>
+
+    <dl class="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-10 md:grid-cols-4">
+      <div><dt class="sr-only">Structures</dt><dd class="stat-num">117</dd><dd class="stat-label">CT structures segmented on the workstation</dd></div>
+      <div><dt class="sr-only">Biomarkers</dt><dd class="stat-num">15+</dd><dd class="stat-label">opportunistic CT biomarkers, each with its literature reference</dd></div>
+      <div><dt class="sr-only">ROI agreement</dt><dd class="stat-num">960 / 960</dd><dd class="stat-label">ROI statistics identical to an independent reference</dd></div>
+      <div><dt class="sr-only">Offline</dt><dd class="stat-num">0</dd><dd class="stat-label">bytes of patient data sent anywhere</dd></div>
+    </dl>
+
+    <p class="fine mt-10">Built for clinical researchers, radiologists in research programmes, imaging core labs, medical physicists, data scientists and trainees.</p>
+  </div>
+</section>
+
+<!-- ───────────────────────── safety ───────────────────────── -->
+<aside class="border-b border-line bg-panel" aria-label="Intended use">
+  <div class="wrap flex flex-col gap-2 py-5 md:flex-row md:items-baseline md:gap-6">
+    <p class="shrink-0 text-[13px] font-semibold text-warn">Research and educational use only</p>
+    <p class="text-[13px] leading-relaxed text-ink-3">AXIO Medical is not a regulated medical device. It has not been cleared by the FDA, CE-marked, or approved by any authority for clinical use. Every output is a decision-support estimate for review by a qualified reader — never a diagnosis.</p>
+  </div>
+</aside>
+
+<!-- ───────────────────────── why ───────────────────────── -->
+<section id="why" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Why AXIO</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Built for research you can defend</h2>
+    <p class="lede mt-4">Quantitative imaging research depends on inputs you can trust, measurements you can trace and a reader who signs off. AXIO is designed around all three.</p>
+
+    <ul class="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Data stays on site</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">AI, measurement and licence checks run on the workstation, including air-gapped machines. No cloud and no telemetry.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Verified input</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Every series is checked for geometry and calibration before it is measured. A failing series is blocked, not measured wrongly.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Honest grading</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Each biomarker is checked against how the scan was acquired, and left ungraded — with the reason — where its threshold does not apply.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Reader sign-off</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">A named reviewer accepts or rejects every AI result. A DICOM report is marked verified only when every result in it was accepted.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Standard outputs</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Segmentations as DICOM SEG and results as DICOM SR (TID 1500), referencing the source series, ready to file beside it in a PACS.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Patient to cohort</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">The same pipeline runs in batch over folders of studies, into one de-identified, analysis-ready table.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Validated and reproducible</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Measurements checked against an independent reference on public clinical series. The same inputs and settings give the same results.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Methods you can cite</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Every method and threshold is documented with its literature reference, with reproducibility guidelines for your methods section.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ───────────────────────── workflow ───────────────────────── -->
+<section id="workflow" class="border-b border-line bg-panel/40">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Workflow</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">One workstation, from scan to dataset</h2>
+    <p class="lede mt-4">Each stage works on the same study and the same voxel grid, so every number in the final table traces back to the source pixels.</p>
+
+    <ol class="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <li class="bg-panel p-6">
+        <span class="module">01</span>
+        <h3 class="card-title">Acquire</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Open DICOM or NIfTI from disk, or search and retrieve from your PACS over read-only DICOMweb.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="module">02</span>
+        <h3 class="card-title">Verify</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">A deterministic integrity check of identity, matrix, spacing, orientation, slice gaps and rescale.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="module">03</span>
+        <h3 class="card-title">Segment</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">On-device AI labels up to 117 CT structures. Correct any mask with a brush before measuring.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="module">04</span>
+        <h3 class="card-title">Quantify</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Opportunistic biomarkers, L3 body composition, radiomics, lung nodules, PET SUV and lung cancer risk.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="module">05</span>
+        <h3 class="card-title">Review</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Accept or reject each result, compare it with the patient's earlier studies, and confirm or override Lung-RADS.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="module">06</span>
+        <h3 class="card-title">Report</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Export DICOM SEG and SR, a structured report and a CSV of every value with its review decision.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="module">07</span>
+        <h3 class="card-title">Scale</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Run the same pipeline in batch over a cohort, into one de-identified table with a QC image per series.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <span class="module">08</span>
+        <h3 class="card-title">Share</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Export de-identified DICOM: dates shifted, identifiers pseudonymised, faces removed from head scans on request.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ───────────────────────── data and viewing ───────────────────────── -->
+<section id="data" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Capabilities · Data and viewing</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Trusted input, calibrated viewing</h2>
+    <p class="lede mt-4">AXIO Workstation and AXIO Connect bring studies in, check them, and give every reader the same calibrated view.</p>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card">
+        <span class="module">Data access</span>
+        <h3 class="card-title">Disk or PACS</h3>
+        <ul class="bullets mt-4">
+          <li>DICOM — CT, MR, PET, nuclear medicine, X-ray, ultrasound, mammography — plus NIfTI and common image formats</li>
+          <li>STL, OBJ and PLY surface meshes</li>
+          <li>Read-only DICOMweb: QIDO-RS search and WADO-RS retrieval, or an exact Study Instance UID lookup</li>
+          <li>HTTPS only, session-only credentials, every instance verified before it is decoded</li>
+          <li>Temporary PACS files removed automatically</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">Series integrity</span>
+        <h3 class="card-title">Fail-closed checks</h3>
+        <ul class="bullets mt-4">
+          <li>Instance identity, pixel payload, matrix, pixel spacing, orientation and frame of reference</li>
+          <li>Slice positions, outlier gaps, thickness against spacing, and rescale stability</li>
+          <li>Quantitative MPR, 3D and AI segmentation are blocked when a check fails</li>
+          <li>Structured JSON evidence with explicit tolerances and per-check findings</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">Viewing and measurement</span>
+        <h3 class="card-title">Calibrated reading</h3>
+        <ul class="bullets mt-4">
+          <li>Window/level presets, pan, zoom, rotate, flip, invert and cine</li>
+          <li>1, 1&times;2, 2&times;2 and 3&times;3 layouts, saved per study type</li>
+          <li>Length, angle, ellipse, rectangle and freehand ROIs in mm and mm&sup2;</li>
+          <li>Exact robust statistics: P05, median, P95 and median absolute deviation</li>
+          <li>Histogram, Otsu thresholds, texture, edge detection, CLAHE and statistical process control</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="mt-12">
+      <div class="figure-frame"><img src="img/mpr.webp" width="1600" height="969" loading="lazy" alt="Linked axial, coronal and sagittal views of a chest CT with MIP slabs, each pane marked with patient orientation letters."></div>
+      <figcaption class="caption">Linked axial, coronal and sagittal planes with MIP slabs. The voxel readout reports the stored Hounsfield value under the cursor.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ───────────────────────── AI quantification ───────────────────────── -->
+<section id="quantification" class="border-b border-line bg-panel/40">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Capabilities · AXIO Engines</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Quantification, on the workstation</h2>
+    <p class="lede mt-4">The AI runtime installs itself on first launch for NVIDIA CUDA, Apple Metal or CPU. Segmentation, biomarkers and radiomics all read the exact same image and mask, with no resampling between them.</p>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-2">
+      <div class="card">
+        <span class="module">AI segmentation</span>
+        <h3 class="card-title">TotalSegmentator, on device</h3>
+        <ul class="bullets mt-4">
+          <li>Whole-body CT (117 structures) and MR (50 structures)</li>
+          <li>Specialised tasks: lung airways and vessels, lung nodules, pleural and pericardial effusion, Couinaud liver segments, liver vessels and tumour</li>
+          <li>Licence-free models only</li>
+          <li>Brush correction, with interpolation between corrected slices</li>
+          <li>Optional automatic start once a CT series passes integrity</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">Opportunistic CT biomarkers</span>
+        <h3 class="card-title">Measurements a routine CT already holds</h3>
+        <ul class="bullets mt-4">
+          <li>Liver fat, emphysema, vertebral bone density, aortic diameter, vascular calcification and organ volumes</li>
+          <li>Graded normal, borderline or abnormal against published thresholds, each with its citation</li>
+          <li>Input checks — contrast phase from the aorta, kernel, slice thickness, kV and coverage — leave a result <span class="text-ink-1">Not graded</span>, with the reason, where its threshold does not apply</li>
+          <li>Compared with the patient's earlier studies from a local, pseudonymised history</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">Body composition</span>
+        <h3 class="card-title">Whole-slice L3 analysis</h3>
+        <ul class="bullets mt-4">
+          <li>Skeletal muscle area and index, graded for sarcopenia</li>
+          <li>Muscle attenuation, graded for myosteatosis</li>
+          <li>Visceral, subcutaneous and intermuscular fat</li>
+          <li>A QC tissue map of the slice, with no licensed tissue model required</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">Radiomics</span>
+        <h3 class="card-title">PyRadiomics, IBSI-referenced</h3>
+        <ul class="bullets mt-4">
+          <li>107 features per structure: first-order, shape, GLCM, GLRLM, GLSZM, GLDM and NGTDM</li>
+          <li>Optional wavelet and Laplacian-of-Gaussian filtered features</li>
+          <li>Configurable bin width; features grouped by class and filterable</li>
+          <li>CSV export for statistical analysis</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="mt-12">
+      <div class="figure-frame"><img src="img/seg-contours.webp" width="1600" height="825" loading="lazy" alt="Axial chest CT with AI contours around the lung lobes, heart, aorta, vertebra and ribs, beside the Auto-Segmentation panel listing structure volumes."></div>
+      <figcaption class="caption">AutoSeg on a public chest CT: 85 structures on Apple Metal, at full resolution, each listed with its volume.</figcaption>
+    </figure>
+
+    <div class="mt-20">
+      <h3 class="font-display text-[20px] font-semibold">Biomarker references</h3>
+      <p class="mt-1 text-[14px] text-ink-3">The thresholds each result is graded against. A result is graded only where its reference applies to the scan.</p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="reftbl min-w-[640px]">
+          <thead><tr><th scope="col">Measure</th><th scope="col">Graded against</th><th scope="col">Reference</th></tr></thead>
+          <tbody>
+            <tr><td>Liver attenuation</td><td>&lt; 40 HU: moderate–severe steatosis (non-contrast only)</td><td class="ref">Kodama 2007; Pickhardt 2012</td></tr>
+            <tr><td>Liver − spleen attenuation</td><td>&le; −10 HU: steatosis (non-contrast only)</td><td class="ref">Boyce 2010</td></tr>
+            <tr><td>Emphysema index (LAA%<sub>−950</sub>)</td><td>&gt; 6 % of lung below −950 HU</td><td class="ref">Lynch 2015 (Fleischner); COPDGene</td></tr>
+            <tr><td>Perc15</td><td>15th-percentile lung attenuation, reported</td><td class="ref">Dirksen 1997</td></tr>
+            <tr><td>Vertebral trabecular attenuation</td><td>L1 &lt; 110 HU: osteoporosis likely; 110–160 HU: osteopenia</td><td class="ref">Pickhardt 2013</td></tr>
+            <tr><td>Maximum aortic diameter</td><td>&ge; 30 mm (abdominal aorta)</td><td class="ref">USPSTF 2019</td></tr>
+            <tr><td>Vascular wall calcification</td><td>Screening indicator, non-gated</td><td class="ref">adapted Agatston</td></tr>
+            <tr><td>Organ volumes</td><td>Population ranges: hepatomegaly, splenomegaly</td><td class="ref">population volumetry</td></tr>
+            <tr><td>Skeletal muscle index at L3</td><td>&lt; 41 cm&sup2;/m&sup2; women; &lt; 43 men with BMI &lt; 25; &lt; 53 men with BMI &ge; 25</td><td class="ref">Martin 2013</td></tr>
+            <tr><td>Muscle attenuation at L3</td><td>&lt; 41 HU with BMI &lt; 25; &lt; 33 HU with BMI &ge; 25</td><td class="ref">Martin 2013</td></tr>
+            <tr><td>Visceral, subcutaneous and intermuscular fat</td><td>Areas reported from standard HU ranges</td><td class="ref">Mourtzakis 2008</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <figure class="mt-12">
+      <div class="figure-frame"><img src="img/biomarkers.webp" width="1600" height="969" loading="lazy" alt="The Clinical Biomarkers panel listing hepatobiliary, pulmonary and musculoskeletal measures with values, flags and literature references."></div>
+      <figcaption class="caption">Every biomarker carries its value, its reference range and its source, and is flagged normal, borderline, abnormal or informational.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ───────────────────────── screening and oncology ───────────────────────── -->
+<section id="screening" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Capabilities · Screening and oncology</p>
+    <h2 class="h-section mt-3 max-w-[24ch]">Lung screening, risk and PET in one place</h2>
+    <p class="lede mt-4">Nodule measurement, Lung-RADS, lung cancer risk and PET lesion quantification, each with the reader's decision recorded beside the software's proposal.</p>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card">
+        <span class="module">Lung screening</span>
+        <h3 class="card-title">Nodules and Lung-RADS v2022</h3>
+        <ul class="bullets mt-4">
+          <li>Click-to-segment nodules: long and short axis, mean diameter, volume, solid part and proposed type</li>
+          <li>Optional automatic detection, each candidate accepted or rejected by the reader</li>
+          <li>A warning when a nodule runs on as a vessel</li>
+          <li>Matching to the patient's prior read, with growth assessment</li>
+          <li>Lung-RADS categories and management, with reader override and reason</li>
+          <li>One screening report with nodules, emphysema index and lung cancer risk</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">Lung cancer risk</span>
+        <h3 class="card-title">1–6 year risk from one CT</h3>
+        <ul class="bullets mt-4">
+          <li>Sybil ensemble, trained and validated on the National Lung Screening Trial</li>
+          <li>Cumulative risk for each year from 1 to 6, from a single low-dose chest CT</li>
+          <li>Attention map with concentration statistics</li>
+          <li>JSON report recording the model, version, device and instance count</li>
+          <li>Valid only for the screening population it was trained on</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">PET quantification</span>
+        <h3 class="card-title">SUV and lesion burden</h3>
+        <ul class="bullets mt-4">
+          <li>SUVbw and SUL (lean body mass) by the QIBA vendor-neutral procedure</li>
+          <li>In the pixel probe and ROI statistics, with the reason stated whenever SUV cannot be computed</li>
+          <li>Click-to-grow lesion VOIs: SUVmax, SUVpeak (1 mL sphere), metabolic tumour volume and total lesion glycolysis</li>
+          <li>MAX41, SUV4 and SUV2.5 thresholds</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 grid gap-12 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-5">
+        <div class="rounded-lg border border-bad/30 bg-bad/[0.06] p-5">
+          <p class="text-[14px] font-semibold text-bad">Used within its limits</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">The risk model is validated on low-dose screening CT in adults aged 55–74 with a significant smoking history. Scores outside that population are unsupported, and an attention map is not a detection: it never locates, measures or excludes a lesion.</p>
+        </div>
+      </div>
+      <figure class="lg:col-span-7">
+        <div class="figure-frame"><img src="img/lungrisk.webp" width="1600" height="969" loading="lazy" alt="The Lung Cancer Risk panel with a six-year cumulative risk chart and an attention map over a chest CT slice."></div>
+        <figcaption class="caption">The Lung Cancer Risk panel: a cumulative trajectory, a risk band per horizon, and the attention map. The example scan is outside the model's population, so it shows the engine running, not a valid risk.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── review and output ───────────────────────── -->
+<section id="output" class="border-b border-line bg-panel/40">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Capabilities · Review and output</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Reviewed results, in standard formats</h2>
+    <p class="lede mt-4">Nothing leaves AXIO without a reader's decision attached, and everything leaves in a format your PACS, statistics software or collaborators already read.</p>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card">
+        <span class="module">Reader review</span>
+        <h3 class="card-title">Accept, reject, compare</h3>
+        <ul class="bullets mt-4">
+          <li>Accept or reject each biomarker under a named reviewer and institution</li>
+          <li>Every rejection carries its reason into the report and CSV</li>
+          <li>A DICOM SR is marked verified only when every result in it was accepted</li>
+          <li>Comparison with the patient's earlier studies, with rules for when two acquisitions are comparable</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">Cohort analysis</span>
+        <h3 class="card-title">One pipeline, many studies</h3>
+        <ul class="bullets mt-4">
+          <li>Batch run: integrity &rarr; AI segmentation &rarr; biomarkers with input checks</li>
+          <li>One de-identified cohort CSV, plus a JSON record and a QC image per series</li>
+          <li>Restartable: an interrupted run continues where it stopped</li>
+          <li>Uses the workstation's own parser, checks and models</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">Data sharing</span>
+        <h3 class="card-title">De-identified DICOM</h3>
+        <ul class="bullets mt-4">
+          <li>DICOM PS3.15 Basic Profile, with dates shifted per patient and patient characteristics kept</li>
+          <li>Consistent pseudonyms and UIDs across exports from one key</li>
+          <li>Series that may carry text in their pixels are refused</li>
+          <li>Faces removed from head CT and MR on request</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <h3 class="font-display text-[20px] font-semibold">What you can export</h3>
+      <div class="mt-6 overflow-x-auto">
+        <table class="reftbl min-w-[560px]">
+          <thead><tr><th scope="col">Output</th><th scope="col">Format</th></tr></thead>
+          <tbody>
+            <tr><td>Segmentation</td><td>DICOM SEG, SNOMED CT coded, referencing the source series</td></tr>
+            <tr><td>Biomarker results</td><td>DICOM SR (TID 1500 measurement report), with grades and unmet input checks</td></tr>
+            <tr><td>Report and data</td><td>Structured text report and CSV, with review decisions and prior comparison</td></tr>
+            <tr><td>Masks and features</td><td>NIfTI segmentation masks; radiomics CSV</td></tr>
+            <tr><td>Lung cancer risk</td><td>JSON trajectory with attention summary</td></tr>
+            <tr><td>Integrity evidence</td><td>JSON with tolerances and per-check findings</td></tr>
+            <tr><td>Cohort</td><td>De-identified CSV, JSON records and QC images</td></tr>
+            <tr><td>Study copy</td><td>De-identified DICOM</td></tr>
+            <tr><td>Figures</td><td>PNG of the 2D view with overlays, MPR composites and 3D renders</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── visualization ───────────────────────── -->
+<section id="visualization" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <p class="eyebrow">Capabilities · Visualization</p>
+        <h2 class="h-section mt-3">See the anatomy behind every number</h2>
+        <p class="lede mt-4">3D that stays tied to the measured data, for checking segmentations, teaching and publication figures.</p>
+        <ul class="bullets mt-8">
+          <li>Linked axial, coronal and sagittal MPR with MIP, MinIP and mean slabs</li>
+          <li>Volume, MIP, Surface, Cinematic and Path Traced 3D, with HDR environment lighting</li>
+          <li>AI structures in their anatomical colours, or as surfaces that enclose their measured volume to within about 0.5 %</li>
+          <li>Click any point in 3D to reach the exact source voxel on its slice or in MPR</li>
+          <li>Clip planes that show the CT on the cut face</li>
+        </ul>
+        <p class="fine mt-6">More in <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="index.html#imaging">Imaging</a> and <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="index.html#surfaces">3D surfaces</a>.</p>
+      </div>
+      <figure class="lg:col-span-7">
+        <div class="figure-frame"><img src="img/pt-anterior.webp" width="1600" height="836" loading="lazy" alt="Path-traced anterior view of the chest with the heart and aorta in red, the inferior vena cava in blue and the lung lobes in shades of blue."></div>
+        <figcaption class="caption">Path traced after AI segmentation, anterior view: each segmented structure in its own colour — heart and aorta red, inferior vena cava blue, lung lobes in shades of blue — while unsegmented tissue such as the ribs keeps the transfer-function colour.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── validation ───────────────────────── -->
+<section id="validation" class="border-b border-line bg-panel/40">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Validation</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Checked against independent references</h2>
+    <p class="lede mt-4">AXIO was run on four public TCIA series — two CT, an oblique 3D MR and an FDG PET, 635 slices in all — and compared with a pydicom and numpy reference that shares none of its code.</p>
+
+    <dl class="mt-12 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Decoded values</dt><dd class="stat-num mt-1 text-[24px]">0</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">differing values, compared bit for bit</dd></div>
+      <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">ROI statistics</dt><dd class="stat-num mt-1 text-[24px]">960 / 960</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">identical pixels, mean and SD</dd></div>
+      <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">3D picks</dt><dd class="stat-num mt-1 text-[24px]">19 / 19</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">exact source value</dd></div>
+      <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Injected faults</dt><dd class="stat-num mt-1 text-[24px]">5 / 5</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">blocked by the integrity check</dd></div>
+    </dl>
+
+    <ol class="mt-12 max-w-[80ch]">
+      <li class="check">
+        <span class="mt-1 font-mono text-[12px] text-ok">PASS</span>
+        <div><h3 class="font-display text-[17px] font-semibold">Geometry and measurement</h3>
+        <p class="mt-1 text-[14px] leading-relaxed text-ink-2">Slice order, pixel and slice spacing and 3D extents exact; 160 lengths exact to the displayed precision; 80 angles exact to 0.1°; PET scaled correctly with 241 different rescale slopes.</p></div>
+      </li>
+      <li class="check">
+        <span class="mt-1 font-mono text-[12px] text-ok">PASS</span>
+        <div><h3 class="font-display text-[17px] font-semibold">Repeatability</h3>
+        <p class="mt-1 text-[14px] leading-relaxed text-ink-2">Each series loaded twice gives bit-identical statistics, and 3D exports of the same view are bit-identical across sessions.</p></div>
+      </li>
+      <li class="check">
+        <span class="mt-1 font-mono text-[12px] text-ok">PASS</span>
+        <div><h3 class="font-display text-[17px] font-semibold">AI pipeline</h3>
+        <p class="mt-1 text-[14px] leading-relaxed text-ink-2">On a public chest CT, the mask produced through the app is voxel-identical to a reference pipeline built from the DICOM geometry, and 9 of 9 biomarkers and 10 of 10 first-order radiomic features reproduce exactly in plain numpy.</p></div>
+      </li>
+    </ol>
+    <p class="fine mt-6">Engineering verification for research and educational use, not a clinical performance study. Agreement is shown on these data; other vendors and acquisitions need their own checks. Details in <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="index.html#accuracy">Accuracy</a>.</p>
+  </div>
+</section>
+
+<!-- ───────────────────────── security ───────────────────────── -->
+<section id="security" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Security and compliance</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Designed for hospital research networks</h2>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-2">
+      <div class="card">
+        <h3 class="font-display text-[18px] font-semibold">Data and network</h3>
+        <ul class="bullets mt-4">
+          <li>The only connections are to your PACS, when an operator opens it, and the one-time AI setup</li>
+          <li>Read-only PACS access: no STOW-RS upload and no DIMSE C-STORE</li>
+          <li>HTTPS enforced, credentials kept for the session only, redirects rejected</li>
+          <li>The interface cannot reach the network or the file system directly</li>
+          <li>Prior-study history stored locally under keyed pseudonyms, and clearable</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="font-display text-[18px] font-semibold">Licensing and status</h3>
+        <ul class="bullets mt-4">
+          <li>30-day trial of every feature, then an institutional licence</li>
+          <li>Signed licence keys checked on the workstation — no licence server, works air-gapped</li>
+          <li>Third-party components listed with their licences in the app</li>
+          <li>Research and educational use only: not FDA-cleared or CE-marked</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── use cases ───────────────────────── -->
+<section id="use-cases" class="border-b border-line bg-panel/40">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Use cases</p>
+    <h2 class="h-section mt-3 max-w-[22ch]">Where research teams use AXIO</h2>
+
+    <ul class="mt-14 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Opportunistic screening studies</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Liver fat, bone density, emphysema and aortic size measured on CTs that already exist, with no extra scan.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Sarcopenia and body composition</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">L3 muscle and fat measures for oncology, surgical and ageing cohorts.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Lung cancer screening research</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Nodule measurement, Lung-RADS, prior comparison and lung cancer risk in one read.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Oncology and PET response</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">SUV, metabolic tumour volume and total lesion glycolysis across time points.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Radiomics and AI development</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Consistent features and reader-reviewed labels as training and validation data.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Retrospective cohorts</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Hundreds of studies processed in batch into one analysis-ready, de-identified table.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Multicentre data sharing</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">De-identification, including face removal, before data leaves the site.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Imaging core labs and QA</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Integrity checks, statistical process control, and reviewer decisions recorded in every report.</p>
+      </li>
+      <li class="bg-panel p-6">
+        <h3 class="font-display text-[17px] font-semibold">Education and training</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-ink-2">Residents and students learn quantitative reading on real cases, with 3D anatomy linked to every slice.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ───────────────────────── requirements ───────────────────────── -->
+<section id="requirements" class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <p class="eyebrow">Requirements</p>
+    <h2 class="h-section mt-3">What it runs on</h2>
+    <div class="mt-12 grid gap-12 lg:grid-cols-2">
+      <table class="tbl"><tbody>
+        <tr><td>macOS</td><td>11 or later · Apple Silicon (Intel Macs: 2.8.8)</td></tr>
+        <tr><td>Windows</td><td>10 / 11 · x64, installer or portable</td></tr>
+        <tr><td>Memory</td><td>16 GB recommended</td></tr>
+        <tr><td>Acceleration</td><td>Apple Metal, NVIDIA CUDA or CPU</td></tr>
+      </tbody></table>
+      <table class="tbl"><tbody>
+        <tr><td>Disk</td><td>~6 GB for the AI runtime, once</td></tr>
+        <tr><td>Lung cancer risk</td><td>~3 GB on first use; ~11 GB memory per scan</td></tr>
+        <tr><td>Network</td><td>First-run setup only</td></tr>
+        <tr><td>DICOM</td><td>Uncompressed transfer syntaxes</td></tr>
+      </tbody></table>
+    </div>
+    <p class="fine mt-6">Path Traced 3D needs a WebGPU-capable GPU; other machines use the Cinematic renderer. AI runs on CPU where no supported GPU is present, roughly 3–5 times slower. Compressed DICOM (JPEG, JPEG-LS, JPEG 2000, RLE) is detected and reported; convert it to an uncompressed transfer syntax first.</p>
+  </div>
+</section>
+
+<!-- ───────────────────────── call to action ───────────────────────── -->
+<section id="evaluate">
+  <div class="wrap py-20 md:py-28">
+    <div class="card flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between md:p-10">
+      <div>
+        <h2 class="font-display text-[clamp(1.5rem,2.6vw,2rem)] font-bold tracking-tightest">Evaluate it on your own cases</h2>
+        <p class="mt-2 max-w-[60ch] text-[15px] leading-relaxed text-ink-2">Every feature, for 30 days, with no account and no sign-up. An institutional licence keeps it running after that.</p>
+      </div>
+      <div class="flex shrink-0 flex-wrap gap-3">
+        <a href="index.html#download" class="btn-primary">Start 30-day trial</a>
+        <a href="mailto:godson@axiomaticresearch.com?subject=AXIO%20Medical%20institutional%20licence" class="btn-secondary">Contact licensing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-line bg-panel">
+  <div class="wrap grid gap-10 py-12 md:grid-cols-12">
+    <div class="md:col-span-5">
+      <img src="img/logo.png" alt="AXIO Medical" class="h-7 w-auto" width="66" height="28">
+      <p class="fine mt-4">Developed by <span class="text-ink-2">Godson Johnson</span> · Axiomatic Research · <span data-year>2026</span>.<br>AXIO Medical is licensed software. Licensing: <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="mailto:godson@axiomaticresearch.com?subject=AXIO%20Medical%20institutional%20licence">godson@axiomaticresearch.com</a></p>
+    </div>
+    <div class="md:col-span-7">
+      <p class="fine">Imaging shown is from the public, de-identified TCIA <em>LungCT-Diagnosis</em> collection.</p>
+      <p class="mt-4 text-[12px] leading-relaxed text-ink-4">Not cleared by the FDA, CE-marked, or approved by any regulatory authority for clinical use. All quantitative outputs are exploratory and must be interpreted by qualified researchers. Not for primary diagnosis or clinical decision-making.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="lightbox" hidden class="fixed inset-0 z-[200] flex cursor-zoom-out items-center justify-center bg-ground/95 p-6 md:p-10" role="dialog" aria-modal="true" aria-label="Enlarged screenshot">
+  <button id="lbClose" type="button" aria-label="Close" class="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-2 hover:bg-panel-2 hover:text-ink-1">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg>
+  </button>
+  <img id="lbImg" alt="" class="max-h-full max-w-full rounded-lg border border-line-strong">
+</div>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
