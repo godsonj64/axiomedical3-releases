@@ -38,12 +38,12 @@ installing:
 
 ```bash
 # macOS / Linux
-shasum -a 256 "AXIO Medical Setup 2.8.12.exe"
+shasum -a 256 "AXIO Medical Setup 2.8.13.exe"
 ```
 
 ```powershell
 # Windows PowerShell
-Get-FileHash "AXIO Medical Setup 2.8.12.exe" -Algorithm SHA256
+Get-FileHash "AXIO Medical Setup 2.8.13.exe" -Algorithm SHA256
 ```
 
 ## Licensing
