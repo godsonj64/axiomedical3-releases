@@ -53,7 +53,7 @@
 <!-- ───────────────────────── hero ───────────────────────── -->
 <section id="top" class="border-b border-line">
   <div class="wrap pb-16 pt-16 md:pb-20 md:pt-24">
-    <p class="eyebrow">Product overview · AXIO Medical 2.8.12</p>
+    <p class="eyebrow">Product overview · AXIO Medical 2.8.13</p>
     <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-7">
         <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
@@ -350,9 +350,11 @@
         <h3 class="card-title">1–6 year risk from one CT</h3>
         <ul class="bullets mt-4">
           <li>Sybil ensemble, trained and validated on the National Lung Screening Trial</li>
-          <li>Cumulative risk for each year from 1 to 6, from a single low-dose chest CT</li>
-          <li>Attention map with concentration statistics</li>
-          <li>JSON report recording the model, version, device and instance count</li>
+          <li>Cumulative risk for each year from 1 to 6, from a single low-dose chest CT, and the risk within each year</li>
+          <li>The five ensemble members, each with its own published calibration, shown when they reproduce the ensemble exactly</li>
+          <li>Attention map placed by replaying the model's own preprocessing, with the regions holding 50 % and 90 % of it, hotspots and concentration statistics</li>
+          <li>Checks of slice thickness, spacing, coverage, contrast and dose against what the model was developed on</li>
+          <li>JSON report recording the model, version, device and instance count, and the attention figure as PNG</li>
           <li>Valid only for the screening population it was trained on</li>
         </ul>
       </div>
@@ -377,7 +379,7 @@
       </div>
       <figure class="lg:col-span-7">
         <div class="figure-frame"><img src="img/lungrisk.webp" width="1600" height="969" loading="lazy" alt="The Lung Cancer Risk panel with a six-year cumulative risk chart and an attention map over a chest CT slice."></div>
-        <figcaption class="caption">The Lung Cancer Risk panel: a cumulative trajectory, a risk band per horizon, and the attention map. The example scan is outside the model's population, so it shows the engine running, not a valid risk.</figcaption>
+        <figcaption class="caption">The Lung Cancer Risk panel as it was before 2.8.13: a cumulative trajectory and the attention map; 2.8.13 drops the per-horizon risk bands, which had no published source. The example scan is outside the model's population, so it shows the engine running, not a valid risk.</figcaption>
       </figure>
     </div>
   </div>
@@ -433,7 +435,7 @@
             <tr><td>Biomarker results</td><td>DICOM SR (TID 1500 measurement report), with grades and unmet input checks</td></tr>
             <tr><td>Report and data</td><td>Structured text report and CSV, with review decisions and prior comparison</td></tr>
             <tr><td>Masks and features</td><td>NIfTI segmentation masks; radiomics CSV</td></tr>
-            <tr><td>Lung cancer risk</td><td>JSON trajectory with attention summary</td></tr>
+            <tr><td>Lung cancer risk</td><td>JSON trajectory with attention, ensemble members and input checks; PNG attention figure</td></tr>
             <tr><td>Integrity evidence</td><td>JSON with tolerances and per-check findings</td></tr>
             <tr><td>Cohort</td><td>De-identified CSV, JSON records and QC images</td></tr>
             <tr><td>Study copy</td><td>De-identified DICOM</td></tr>
