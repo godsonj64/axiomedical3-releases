@@ -53,7 +53,7 @@
 <!-- ───────────────────────── hero ───────────────────────── -->
 <section id="top" class="border-b border-line">
   <div class="wrap pb-16 pt-16 md:pb-20 md:pt-24">
-    <p class="eyebrow">Product overview · AXIO Medical 2.8.13</p>
+    <p class="eyebrow">Product overview · AXIO Medical 2.8.14</p>
     <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-7">
         <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
@@ -329,10 +329,10 @@
 <section id="screening" class="border-b border-line">
   <div class="wrap py-20 md:py-28">
     <p class="eyebrow">Capabilities · Screening and oncology</p>
-    <h2 class="h-section mt-3 max-w-[24ch]">Lung screening, risk and PET in one place</h2>
-    <p class="lede mt-4">Nodule measurement, Lung-RADS, lung cancer risk and PET lesion quantification, each with the reader's decision recorded beside the software's proposal.</p>
+    <h2 class="h-section mt-3 max-w-[24ch]">Screening, tumour response, risk and PET in one place</h2>
+    <p class="lede mt-4">Nodule measurement, Lung-RADS, tumour response by RECIST 1.1, lung cancer risk and PET lesion quantification, each with the reader's decision recorded beside the software's proposal.</p>
 
-    <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-2">
       <div class="card">
         <span class="module">Lung screening</span>
         <h3 class="card-title">Nodules and Lung-RADS v2022</h3>
@@ -343,6 +343,17 @@
           <li>Matching to the patient's prior read, with growth assessment</li>
           <li>Lung-RADS categories and management, with reader override and reason</li>
           <li>One screening report with nodules, emphysema index and lung cancer risk</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="module">Tumour response</span>
+        <h3 class="card-title">RECIST 1.1, lesion by lesion</h3>
+        <ul class="bullets mt-4">
+          <li>Target and non-target lesions over dated studies: five targets, two per organ, lymph nodes as one organ</li>
+          <li>One click outlines a lesion in 3D; RECIST diameters and volume come from the outline, calipers when you prefer</li>
+          <li>At the next study every lesion is found again by the patient's anatomy and outlined the same way, for the reader to confirm</li>
+          <li>Response per timepoint, best overall response and date of progression, by the guideline and its 2016 update</li>
+          <li>Reader overrides kept beside the computed response, with a reason</li>
         </ul>
       </div>
       <div class="card">
@@ -378,8 +389,8 @@
         </div>
       </div>
       <figure class="lg:col-span-7">
-        <div class="figure-frame"><img src="img/lungrisk.webp" width="1600" height="969" loading="lazy" alt="The Lung Cancer Risk panel with a six-year cumulative risk chart and an attention map over a chest CT slice."></div>
-        <figcaption class="caption">The Lung Cancer Risk panel as it was before 2.8.13: a cumulative trajectory and the attention map; 2.8.13 drops the per-horizon risk bands, which had no published source. The example scan is outside the model's population, so it shows the engine running, not a valid risk.</figcaption>
+        <div class="figure-frame"><img src="img/lungrisk.webp" width="1600" height="969" loading="lazy" alt="The Lung Cancer Risk panel: the model's attention in a colour scale over a chest CT slice, with the same map on the main image and the six-year risk."></div>
+        <figcaption class="caption">The Lung Cancer Risk panel: the model's attention, placed where it looked, in the panel and on the main image. The example scan is outside the model's population (its input checks say so), so it shows the engine running, not a valid risk.</figcaption>
       </figure>
     </div>
   </div>
@@ -435,6 +446,7 @@
             <tr><td>Biomarker results</td><td>DICOM SR (TID 1500 measurement report), with grades and unmet input checks</td></tr>
             <tr><td>Report and data</td><td>Structured text report and CSV, with review decisions and prior comparison</td></tr>
             <tr><td>Masks and features</td><td>NIfTI segmentation masks; radiomics CSV</td></tr>
+            <tr><td>Tumour response</td><td>Text report, CSV and JSON: every lesion at every timepoint, the responses with their reasons, reader overrides</td></tr>
             <tr><td>Lung cancer risk</td><td>JSON trajectory with attention, ensemble members and input checks; PNG attention figure</td></tr>
             <tr><td>Integrity evidence</td><td>JSON with tolerances and per-check findings</td></tr>
             <tr><td>Cohort</td><td>De-identified CSV, JSON records and QC images</td></tr>
