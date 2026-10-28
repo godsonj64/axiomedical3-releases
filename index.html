@@ -79,7 +79,7 @@
         <img src="img/hero.webp" width="1600" height="969" fetchpriority="high"
              alt="AXIO Medical showing an axial chest CT with AI segmentation overlaid: lung lobes, heart, aorta, vertebra and ribs each in their own colour.">
       </div>
-      <figcaption class="caption">A contrast-enhanced chest CT from the public TCIA LungCT-Diagnosis collection, segmented on-device into 85 anatomical structures in 84 seconds on an Apple M4.</figcaption>
+      <figcaption class="caption">A contrast-enhanced chest CT from the public TCIA LungCT-Diagnosis collection, segmented on-device into 85 anatomical structures in 86 seconds on an Apple M4.</figcaption>
     </figure>
 
     <dl class="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-10 md:grid-cols-4">
@@ -320,16 +320,16 @@
       <figure class="mt-10">
         <div class="figure-frame">
           <img src="img/biomarkers.webp" width="1600" height="969" loading="lazy"
-               alt="The Clinical Biomarkers panel listing hepatobiliary, pulmonary and musculoskeletal measures with values, flags and literature references.">
+               alt="The Clinical Biomarkers panel: the acquisition and contrast checks, the review controls, and L1 trabecular attenuation of 166 HU flagged normal, with its reference range, its sources and a contrast warning.">
         </div>
-        <figcaption class="caption">Every biomarker carries its value, its reference range and its source, and is flagged normal, borderline, abnormal or informational.</figcaption>
+        <figcaption class="caption">Every biomarker carries its value, its reference range and its source, and is flagged normal, borderline or abnormal. When the scan does not meet a criterion’s conditions the result is left not graded, or carries a warning: here L1 reads 166 HU, normal, with a note that IV contrast adds about 11 HU.</figcaption>
       </figure>
     </div>
 
     <div class="mt-20">
       <h3 class="font-display text-[20px] font-semibold">How long a full pass takes</h3>
       <dl class="mt-6 grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-        <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Segmentation</dt><dd class="stat-num mt-1 text-[24px]">84 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">85 structures · Apple GPU</dd></div>
+        <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Segmentation</dt><dd class="stat-num mt-1 text-[24px]">86 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">85 structures · Apple GPU</dd></div>
         <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Radiomics</dt><dd class="stat-num mt-1 text-[24px]">120 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">85 structures · CPU</dd></div>
         <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Biomarkers</dt><dd class="stat-num mt-1 text-[24px]">3 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">15 measures</dd></div>
         <div class="bg-panel p-5"><dt class="text-[13px] text-ink-3">Lung risk</dt><dd class="stat-num mt-1 text-[24px]">358 s</dd><dd class="mt-1 font-mono text-[11px] text-ink-4">risk-model ensemble · CPU</dd></div>
@@ -368,8 +368,8 @@
         <figcaption class="caption">21 AutoSeg structures as surfaces, left anterior oblique, in the colours of the 2D overlay: five lung lobes, the trachea, the heart and great vessels, the portal and splenic vein, and the spinal cord. Each surface is calibrated to enclose its structure's voxel volume.</figcaption>
       </figure>
       <figure role="tabpanel" id="p-cine" aria-labelledby="t-cine" hidden>
-        <div class="figure-frame"><img src="img/cinematic.webp" width="1600" height="969" loading="lazy" alt="Cinematic volume rendering of the chest CT with volumetric shadows and ambient occlusion."></div>
-        <figcaption class="caption">Cinematic rendering with volumetric shadows, ambient occlusion and subsurface scattering derived from attenuation.</figcaption>
+        <div class="figure-frame"><img src="img/cinematic.webp" width="1600" height="969" loading="lazy" alt="Cinematic volume rendering of the chest from the front: ribs, sternum and clavicles over the heart and liver, each segmented structure in its anatomical colour."></div>
+        <figcaption class="caption">Cinematic rendering on WebGPU after AutoSeg: volumetric scattering, ambient occlusion and subsurface scattering, with each segmented structure in its anatomical reference colour while opacity and shading follow Hounsfield units. Blood &amp; Bone preset; the 67 slices are interpolated to 335.</figcaption>
       </figure>
       <figure role="tabpanel" id="p-pt" aria-labelledby="t-pt" hidden>
         <div class="figure-frame"><img src="img/pt-anterior.webp" width="1600" height="836" loading="lazy" alt="Path-traced anterior view of the chest with the heart and aorta in red, the inferior vena cava in blue and the lung lobes in shades of blue."></div>
