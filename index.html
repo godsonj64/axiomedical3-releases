@@ -521,6 +521,27 @@
   </div>
 </section>
 
+<!-- ───────────────────────── tumour response ───────────────────────── -->
+<section class="border-b border-line">
+  <div class="wrap py-20 md:py-28">
+    <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-5">
+        <p class="eyebrow">Tumour response</p>
+        <h2 class="h-section mt-3">RECIST 1.1, outlined and followed</h2>
+        <p class="lede mt-4">Click a lesion and it is outlined in 3D; its RECIST diameters and volume are measured from the outline. At the next study each lesion is found again by the patient's anatomy and outlined the same way, and each follow-up gets its response.</p>
+        <div class="mt-8 rounded-lg border border-accent/30 bg-accent/[0.06] p-5">
+          <p class="text-[14px] font-semibold text-ink-1">The reader decides</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Every outline is a proposal. Where a lung mass meets the mediastinum, as here, the outline is closed along the lung's edge and the reader is asked to check it there. Responses are computed from the reader's measurements, and an override is kept beside the computed response with its reason.</p>
+        </div>
+      </div>
+      <figure class="lg:col-span-7">
+        <div class="figure-frame"><img src="img/recist.webp" width="1600" height="969" loading="lazy" alt="The Tumour response panel at baseline with one target lesion in the right upper lobe, and the lesion's 3D outline and long axis on the chest CT, beside the trachea and the mediastinum."></div>
+        <figcaption class="caption">One click on a right upper lobe mass: outlined in 3D up to the lung's edge where it meets the mediastinum, 33.5 × 21.5 mm and 9.7 mL, recorded as the baseline target lesion.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ───────────────────────── specs ───────────────────────── -->
 <section id="specs" class="border-b border-line bg-panel/40">
   <div class="wrap py-20 md:py-28">
@@ -584,10 +605,12 @@
     <div class="grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-5">
         <p class="eyebrow">Download</p>
-        <h2 class="h-section mt-3">AXIO Medical 2.8.14</h2>
+        <h2 class="h-section mt-3">AXIO Medical 2.8.15</h2>
         <p class="lede mt-4">The 30-day trial. No account needed and no telemetry; enter your institution's licence key to keep using it afterwards.</p>
         <div class="mt-8 rounded-lg border border-accent/30 bg-accent/[0.06] p-5">
-          <p class="text-[14px] font-semibold text-ink-1">New in 2.8.14</p>
+          <p class="text-[14px] font-semibold text-ink-1">New in 2.8.15</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Lung lesions that touch the mediastinum or chest wall are outlined to the lung's edge instead of running on into it, and the reader is asked to check the outline there. A lesion beside the trachea takes its edge from the lung, not from the airway's air. Applies to tumour response and nodule measurement.</p>
+          <p class="mt-3 text-[14px] font-semibold text-ink-1">New in 2.8.14</p>
           <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Tumour response by RECIST 1.1: record target and non-target lesions, outline each in 3D with one click (its diameters and volume measured from the outline), and at the next study find every lesion again by the patient's anatomy and outline it the same way. Each follow-up gets its response and the case its best overall response, with every rule of the guideline and its 2016 update applied, and the reader's decision kept beside the computed one. A redrawn toolbar, each button in its own colour.</p>
           <p class="mt-3 text-[14px] font-semibold text-ink-1">New in 2.8.13</p>
           <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">The lung cancer risk attention map is drawn where the model actually looked, by replaying its own preprocessing — earlier versions stretched it over the series, up to 40 mm off. The panel adds risk within each year, the five ensemble members, and checks of the scan against what the model was developed on.</p>
@@ -606,8 +629,8 @@
           <h3 class="font-display text-[18px] font-semibold">macOS</h3>
           <p class="mt-1 text-[13px] text-ink-3">macOS 11+ · Apple Silicon (M1 and later)</p>
           <div class="mt-6 flex flex-col gap-3">
-            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.14/AXIO.Medical-2.8.14-arm64.dmg">Disk image <span class="font-normal opacity-80">· 112 MB</span></a>
-            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.14/AXIO.Medical-2.8.14-arm64-mac.zip">Zipped app <span class="font-normal text-ink-3">· 123 MB</span></a>
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.15/AXIO.Medical-2.8.15-arm64.dmg">Disk image <span class="font-normal opacity-80">· 112 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.15/AXIO.Medical-2.8.15-arm64-mac.zip">Zipped app <span class="font-normal text-ink-3">· 123 MB</span></a>
           </div>
           <p class="fine mt-3">Intel Mac? <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.8.8">2.8.8</a> is the last version for Intel Macs.</p>
         </div>
@@ -615,12 +638,12 @@
           <h3 class="font-display text-[18px] font-semibold">Windows</h3>
           <p class="mt-1 text-[13px] text-ink-3">Windows 10 / 11 · x64</p>
           <div class="mt-6 flex flex-col gap-3">
-            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.14/AXIO.Medical.Setup.2.8.14.exe">Installer <span class="font-normal opacity-80">· 103 MB</span></a>
-            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.14/AXIO.Medical.2.8.14.exe">Portable <span class="font-normal text-ink-3">· 102 MB</span></a>
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.15/AXIO.Medical.Setup.2.8.15.exe">Installer <span class="font-normal opacity-80">· 103 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.15/AXIO.Medical.2.8.15.exe">Portable <span class="font-normal text-ink-3">· 102 MB</span></a>
           </div>
         </div>
         <div class="sm:col-span-2">
-          <p class="fine">These builds are not signed with a paid code-signing certificate. On macOS, open the app once, then choose <span class="text-ink-2">Open Anyway</span> under System Settings → Privacy &amp; Security; on Windows, choose <span class="text-ink-2">More info → Run anyway</span> if SmartScreen appears. Verify downloads against the SHA-256 checksums in the <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.8.14">release notes</a>.</p>
+          <p class="fine">These builds are not signed with a paid code-signing certificate. On macOS, open the app once, then choose <span class="text-ink-2">Open Anyway</span> under System Settings → Privacy &amp; Security; on Windows, choose <span class="text-ink-2">More info → Run anyway</span> if SmartScreen appears. Verify downloads against the SHA-256 checksums in the <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.8.15">release notes</a>.</p>
         </div>
       </div>
     </div>
