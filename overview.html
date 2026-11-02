@@ -53,7 +53,7 @@
 <!-- ───────────────────────── hero ───────────────────────── -->
 <section id="top" class="border-b border-line">
   <div class="wrap pb-16 pt-16 md:pb-20 md:pt-24">
-    <p class="eyebrow">Product overview · AXIO Medical 2.8.15</p>
+    <p class="eyebrow">Product overview · AXIO Medical 2.8.16</p>
     <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-7">
         <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
@@ -263,6 +263,7 @@
         <h3 class="card-title">Measurements a routine CT already holds</h3>
         <ul class="bullets mt-4">
           <li>Liver fat, emphysema, vertebral bone density, aortic diameter, vascular calcification and organ volumes</li>
+          <li>Coronary artery calcium on non-contrast chest CT by the 2016 SCCT/STR rules (Agatston, CAC-DRS), each lesion assigned to its artery or rejected by the reader</li>
           <li>Graded normal, borderline or abnormal against published thresholds, each with its citation</li>
           <li>Input checks — contrast phase from the aorta, kernel, slice thickness, kV and coverage — leave a result <span class="text-ink-1">Not graded</span>, with the reason, where its threshold does not apply</li>
           <li>Compared with the patient's earlier studies from a local, pseudonymised history</li>
@@ -283,6 +284,7 @@
         <h3 class="card-title">PyRadiomics features</h3>
         <ul class="bullets mt-4">
           <li>107 features per structure: first-order, shape, GLCM, GLRLM, GLSZM, GLDM and NGTDM</li>
+          <li>Tumour radiomics of nodules and RECIST lesions after IBSI image processing: 102 of 102 comparable features within tolerance on the IBSI CT phantom, with each feature's change for a one-pixel outline change</li>
           <li>Optional wavelet and Laplacian-of-Gaussian filtered features</li>
           <li>Configurable bin width; features grouped by class and filterable</li>
           <li>CSV export for statistical analysis, recording the PyRadiomics version, bin width and conventions</li>
@@ -342,6 +344,7 @@
           <li>A warning when a nodule runs on as a vessel</li>
           <li>Matching to the patient's prior read, with growth assessment</li>
           <li>Lung-RADS categories and management, with reader override and reason</li>
+          <li>Brock and Mayo malignancy probability for each nodule, with each model's exclusions and cautions</li>
           <li>One screening report with nodules, emphysema index and lung cancer risk</li>
         </ul>
       </div>
@@ -446,6 +449,7 @@
             <tr><td>Biomarker results</td><td>DICOM SR (TID 1500 measurement report), with grades and unmet input checks</td></tr>
             <tr><td>Report and data</td><td>Structured text report and CSV, with review decisions and prior comparison</td></tr>
             <tr><td>Masks and features</td><td>NIfTI segmentation masks; radiomics CSV</td></tr>
+            <tr><td>Clinical report</td><td>PDF: every test with its input checks and review, the oncology read and labelled anatomy images, de-identified by default</td></tr>
             <tr><td>Tumour response</td><td>Text report, CSV and JSON: every lesion at every timepoint, the responses with their reasons, reader overrides</td></tr>
             <tr><td>Lung cancer risk</td><td>JSON trajectory with attention, ensemble members and input checks; PNG attention figure</td></tr>
             <tr><td>Integrity evidence</td><td>JSON with tolerances and per-check findings</td></tr>
