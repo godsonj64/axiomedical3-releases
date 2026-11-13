@@ -59,7 +59,8 @@
   if (lb && lbImg) {
     var open = function (img) {
       opener = img;
-      lbImg.src = img.currentSrc || img.src;
+      // The largest version there is: figures name it in data-full.
+      lbImg.src = img.getAttribute('data-full') || img.currentSrc || img.src;
       lbImg.alt = img.alt;
       lb.hidden = false;
       document.body.style.overflow = 'hidden';

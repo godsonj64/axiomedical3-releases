@@ -53,7 +53,7 @@
 <!-- ───────────────────────── hero ───────────────────────── -->
 <section id="top" class="border-b border-line">
   <div class="wrap pb-16 pt-16 md:pb-20 md:pt-24">
-    <p class="eyebrow">Product overview · AXIO Medical 2.8.17</p>
+    <p class="eyebrow">Product overview · AXIO Medical 2.8.18</p>
     <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-7">
         <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
@@ -223,7 +223,7 @@
         <span class="module">Viewing and measurement</span>
         <h3 class="card-title">Calibrated reading</h3>
         <ul class="bullets mt-4">
-          <li>Window/level presets, pan, zoom, rotate, flip, invert and cine</li>
+          <li>Window/level presets by the DICOM window functions, pan, zoom, rotate, flip, invert and cine</li>
           <li>1, 1&times;2, 2&times;2 and 3&times;3 layouts, saved per study type</li>
           <li>Length, angle, ellipse, rectangle and freehand ROIs in mm and mm&sup2;</li>
           <li>Exact robust statistics: P05, median, P95 and median absolute deviation</li>
@@ -473,7 +473,7 @@
         <p class="lede mt-4">3D that stays tied to the measured data, for checking segmentations, teaching and publication figures.</p>
         <ul class="bullets mt-8">
           <li>Linked axial, coronal and sagittal MPR with MIP, MinIP and mean slabs</li>
-          <li>Volume, MIP, Surface, Cinematic and Path Traced 3D, with HDR environment lighting</li>
+          <li>Volume, MIP, Surface, Cinematic and Path Traced 3D at the display's full resolution, with cinematic looks and HDR environment lighting</li>
           <li>AI structures in their anatomical colours, or as surfaces that enclose their measured volume to within about 0.5 %</li>
           <li>Click any point in 3D to reach the exact source voxel on its slice or in MPR</li>
           <li>Clip planes that show the CT on the cut face</li>
@@ -481,8 +481,8 @@
         <p class="fine mt-6">More in <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="index.html#imaging">Imaging</a> and <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="index.html#surfaces">3D surfaces</a>.</p>
       </div>
       <figure class="lg:col-span-7">
-        <div class="figure-frame"><img src="img/pt-anterior.webp" width="1600" height="836" loading="lazy" alt="Path-traced anterior view of the chest with the heart and aorta in red, the inferior vena cava in blue and the lung lobes in shades of blue."></div>
-        <figcaption class="caption">Path traced after AI segmentation, anterior view: each segmented structure in its own colour — heart and aorta red, inferior vena cava blue, lung lobes in shades of blue — while unsegmented tissue such as the ribs keeps the transfer-function colour.</figcaption>
+        <div class="figure-frame"><img src="img/cinematic.webp" srcset="img/cinematic.webp 1600w, img/cinematic-2x.webp 3200w" sizes="(min-width: 1264px) 700px, 95vw" data-full="img/cinematic-2x.webp" width="1600" height="969" loading="lazy" decoding="async" alt="AXIO Medical in Cinematic mode: the lower ribs, lumbar spine, pelvis and hips of an abdominal CT as solid ivory surfaces on black, with the transfer-function editor beside the view."></div>
+        <figcaption class="caption">Cinematic rendering with the Cinematic Bone look: bone as solid ivory surfaces on black, rendered at one pixel per screen pixel. Shadows, ambient occlusion and gloss follow the Hounsfield values. Abdominal CT, 423 slices of 1&nbsp;mm.</figcaption>
       </figure>
     </div>
   </div>
@@ -616,10 +616,10 @@
         <tr><td>Disk</td><td>~6 GB for the AI runtime, once</td></tr>
         <tr><td>Lung cancer risk</td><td>~3 GB on first use; ~11 GB memory per scan</td></tr>
         <tr><td>Network</td><td>First-run setup only</td></tr>
-        <tr><td>DICOM</td><td>Uncompressed transfer syntaxes</td></tr>
+        <tr><td>DICOM</td><td>Uncompressed, JPEG, JPEG-LS, JPEG 2000, RLE; multi-frame</td></tr>
       </tbody></table>
     </div>
-    <p class="fine mt-6">Path Traced 3D needs a WebGPU-capable GPU; other machines use the Cinematic renderer. AI runs on CPU where no supported GPU is present, roughly 3–5 times slower. Compressed DICOM (JPEG, JPEG-LS, JPEG 2000, RLE) is detected and reported; convert it to an uncompressed transfer syntax first.</p>
+    <p class="fine mt-6">Path Traced 3D needs a WebGPU-capable GPU; other machines use the Cinematic renderer. AI runs on CPU where no supported GPU is present, roughly 3–5 times slower. Compressed DICOM (JPEG, JPEG-LS, JPEG 2000, RLE) is decoded by the AI runtime once it is installed; video, High-Throughput JPEG 2000 and JPEG XL are not supported.</p>
   </div>
 </section>
 
@@ -648,7 +648,7 @@
       <p class="fine mt-4">Developed by <span class="text-ink-2">Godson Johnson</span> · Axiomatic Research · <span data-year>2026</span>.<br>AXIO Medical is licensed software. Licensing: <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="mailto:godson@axiomaticresearch.com?subject=AXIO%20Medical%20institutional%20licence">godson@axiomaticresearch.com</a></p>
     </div>
     <div class="md:col-span-7">
-      <p class="fine">Imaging shown is from the public, de-identified TCIA <em>LungCT-Diagnosis</em> collection.</p>
+      <p class="fine">Imaging shown is from the public, de-identified TCIA <em>LungCT-Diagnosis</em> and <em>C4KC-KiTS</em> collections (CC BY 3.0).</p>
       <p class="mt-4 text-[12px] leading-relaxed text-ink-4">Not cleared by the FDA, CE-marked, or approved by any regulatory authority for clinical use. All quantitative outputs are exploratory and must be interpreted by qualified researchers. Not for primary diagnosis or clinical decision-making.</p>
     </div>
   </div>
