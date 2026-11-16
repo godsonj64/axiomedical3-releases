@@ -55,7 +55,7 @@
   <div class="wrap pb-16 pt-16 md:pb-20 md:pt-24">
     <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-7">
-        <a href="#download" class="mb-6 inline-flex min-h-[32px] items-center gap-2 rounded-full border border-accent/30 bg-accent/[0.06] px-3.5 text-[13px] font-medium text-accent-tint transition-colors hover:border-accent/60">New in 2.8.20 · solid interface, new analysis icons <span aria-hidden="true">→</span></a>
+        <a href="#download" class="mb-6 inline-flex min-h-[32px] items-center gap-2 rounded-full border border-accent/30 bg-accent/[0.06] px-3.5 text-[13px] font-medium text-accent-tint transition-colors hover:border-accent/60">New in 2.8.21 · RTSTRUCT and lesion DICOM export <span aria-hidden="true">→</span></a>
         <h1 class="font-display text-[clamp(2.25rem,5.2vw,3.75rem)] font-bold leading-[1.05] tracking-tightest">
           Imaging informatics, on your own workstation.
           <span class="text-accent-tint">Try it for 30 days.</span>
@@ -642,15 +642,17 @@
     <div class="grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-5">
         <p class="eyebrow">Download</p>
-        <h2 class="h-section mt-3">AXIO Medical 2.8.20</h2>
+        <h2 class="h-section mt-3">AXIO Medical 2.8.21</h2>
         <p class="lede mt-4">The 30-day trial. No account needed and no telemetry; enter your institution's licence key to keep using it afterwards.</p>
         <div class="mt-8 rounded-lg border border-accent/30 bg-accent/[0.06] p-5">
-          <p class="text-[14px] font-semibold text-ink-1">New in 2.8.20</p>
+          <p class="text-[14px] font-semibold text-ink-1">New in 2.8.21</p>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Results leave the workstation as more standard DICOM objects. The segmentation exports as an RT Structure Set, with contours that follow the voxel edges, so a structure's volume from its contours equals its voxel volume. The outlined lesions of the nodule, tumour response and PET tools export as a DICOM segmentation, a TID 1500 measurement report and a structure set, each lesion with its axes, volume or SUV values and its category. Everything references the source images and is written to a folder you choose; nothing is sent anywhere. Multi-frame series, which results cannot reference image by image, are now refused by the export instead of being attempted.</p>
+          <p class="mt-3 text-[14px] font-semibold text-ink-1">New in 2.8.20</p>
           <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">A solid interface: every panel, dialog and read-out is one opaque, neutral tone, with nothing blurred or see-through over the image. Cards are plain blocks, buttons and text fields look different from each other, and a status takes as much colour as it needs attention: a pass is quiet, a caution is amber, a failure is red. The analysis tools have new icons that show what each one measures, in a deep blue. MPR planes, the histogram and the transfer-function editor are drawn on neutral black instead of navy, so grey levels are read against a neutral surround. The histogram shows which values the display window covers.</p>
-          <p class="mt-3 text-[14px] font-semibold text-ink-1">New in 2.8.19</p>
-          <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Cinematic looks for soft tissue: skin, muscle under the skin, the lungs inside the rib cage, and the enhancing organs on a contrast-enhanced CT. Skin and muscle have the same Hounsfield values, so a new Skin peel removes the outer millimetres of the body, found from the CT itself with no segmentation. After AutoSeg, organ presets show one organ system on its own in lifelike colour: solid organs, digestive tract, heart and vessels, lungs, skeleton or muscles. Organ surfaces on thin-slice scans are smoother. In the toolbar, a selected tool is a solid colour for its category, and the integrity shield shows its result as a mark as well as a colour.</p>
           <details class="mt-4 border-t border-accent/20 pt-3">
-            <summary class="cursor-pointer text-[13.5px] font-medium text-accent-tint">Earlier versions, 2.8 to 2.8.18</summary>
+            <summary class="cursor-pointer text-[13.5px] font-medium text-accent-tint">Earlier versions, 2.8 to 2.8.19</summary>
+            <p class="mt-3 text-[14px] font-semibold text-ink-1">New in 2.8.19</p>
+            <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Cinematic looks for soft tissue: skin, muscle under the skin, the lungs inside the rib cage, and the enhancing organs on a contrast-enhanced CT. Skin and muscle have the same Hounsfield values, so a new Skin peel removes the outer millimetres of the body, found from the CT itself with no segmentation. After AutoSeg, organ presets show one organ system on its own in lifelike colour: solid organs, digestive tract, heart and vessels, lungs, skeleton or muscles. Organ surfaces on thin-slice scans are smoother. In the toolbar, a selected tool is a solid colour for its category, and the integrity shield shows its result as a mark as well as a colour.</p>
             <p class="mt-3 text-[14px] font-semibold text-ink-1">New in 2.8.18</p>
             <p class="mt-2 text-[13.5px] leading-relaxed text-ink-2">Compressed DICOM (JPEG, JPEG-LS, JPEG 2000, RLE) and multi-frame objects open, and files are recognised by content, not by name. An embedded icon or a nested sequence can no longer replace an image's size, pixels or patient details. In 2D, each viewport shows its own orientation letters and corner text, measurements read millimetres only when the image states a pixel size, the window follows the DICOM functions, and non-square pixels are drawn at their true shape. 3D is rendered at the screen's full resolution on black, with cinematic looks: bone as a solid ivory surface, vessels and organs in colour.</p>
             <p class="mt-3 text-[14px] font-semibold text-ink-1">New in 2.8.17</p>
@@ -679,8 +681,8 @@
           <h3 class="font-display text-[18px] font-semibold">macOS</h3>
           <p class="mt-1 text-[13px] text-ink-3">macOS 11+ · Apple Silicon (M1 and later)</p>
           <div class="mt-6 flex flex-col gap-3">
-            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.20/AXIO.Medical-2.8.20-arm64.dmg">Disk image <span class="font-normal opacity-80">· 112 MB</span></a>
-            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.20/AXIO.Medical-2.8.20-arm64-mac.zip">Zipped app <span class="font-normal text-ink-3">· 123 MB</span></a>
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.21/AXIO.Medical-2.8.21-arm64.dmg">Disk image <span class="font-normal opacity-80">· 112 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.21/AXIO.Medical-2.8.21-arm64-mac.zip">Zipped app <span class="font-normal text-ink-3">· 123 MB</span></a>
           </div>
           <p class="fine mt-3">Intel Mac? <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.8.8">2.8.8</a> is the last version for Intel Macs.</p>
         </div>
@@ -688,12 +690,12 @@
           <h3 class="font-display text-[18px] font-semibold">Windows</h3>
           <p class="mt-1 text-[13px] text-ink-3">Windows 10 / 11 · x64</p>
           <div class="mt-6 flex flex-col gap-3">
-            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.20/AXIO.Medical.Setup.2.8.20.exe">Installer <span class="font-normal opacity-80">· 103 MB</span></a>
-            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.20/AXIO.Medical.2.8.20.exe">Portable <span class="font-normal text-ink-3">· 103 MB</span></a>
+            <a class="btn-primary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.21/AXIO.Medical.Setup.2.8.21.exe">Installer <span class="font-normal opacity-80">· 103 MB</span></a>
+            <a class="btn-secondary" href="https://github.com/godsonj64/axiomedical3-releases/releases/download/v2.8.21/AXIO.Medical.2.8.21.exe">Portable <span class="font-normal text-ink-3">· 103 MB</span></a>
           </div>
         </div>
         <div class="sm:col-span-2">
-          <p class="fine">These builds are not signed with a paid code-signing certificate. On macOS, open the app once, then choose <span class="text-ink-2">Open Anyway</span> under System Settings → Privacy &amp; Security; on Windows, choose <span class="text-ink-2">More info → Run anyway</span> if SmartScreen appears. Verify downloads against the SHA-256 checksums in the <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.8.20">release notes</a>.</p>
+          <p class="fine">These builds are not signed with a paid code-signing certificate. On macOS, open the app once, then choose <span class="text-ink-2">Open Anyway</span> under System Settings → Privacy &amp; Security; on Windows, choose <span class="text-ink-2">More info → Run anyway</span> if SmartScreen appears. Verify downloads against the SHA-256 checksums in the <a class="text-accent-tint underline decoration-accent/40 underline-offset-2 hover:decoration-accent" href="https://github.com/godsonj64/axiomedical3-releases/releases/tag/v2.8.21">release notes</a>.</p>
         </div>
       </div>
     </div>
